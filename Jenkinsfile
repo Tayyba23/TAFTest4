@@ -8,7 +8,7 @@ node {
             
         }
         stage ('Build') {
-           
+            bat "cd SQLSource \n ExecScripts.bat"
         }
        stage ('Tests') {
             parallel 'static': {
