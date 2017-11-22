@@ -1,3 +1,4 @@
+
 DEFINE JOB LOAD_JOB
 DESCRIPTION 'Loading from file into staging table'
 (
