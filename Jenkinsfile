@@ -8,7 +8,12 @@ node {
             
         }
         stage ('Build') {
+		try {
             bat "cd SQLSource \n ExecScripts.bat"
+			}
+			catch(err){
+			            echo "Optional tests failed... don't propagate failure"
+			}
         }
        stage ('Tests') {
             parallel 'static': {
