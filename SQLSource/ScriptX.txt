@@ -12,6 +12,7 @@
       starting_balance DECIMAL(9,2) ,
       ending_balance DECIMAL(9,2)
 );
+.IF ERRORCODE <> 0 THEN .QUIT 8
 CREATE TABLE credit_acct 
      (
       cust_id INTEGER NOT NULL,
@@ -23,7 +24,7 @@ CREATE TABLE credit_acct
       acct_end_date DATE FORMAT 'YYYYMMDD',
       starting_balance DECIMAL(9,2) FORMAT '--Z(6)9.99',
       ending_balance DECIMAL(9,2) FORMAT '--Z(6)9.99');
-.if errorcode > 0 then .quit 255
+.IF ERRORCODE <> 0 THEN .QUIT 8
 create table ContractorEmployee
  (
   Employee_ID VARCHAR(50), 
@@ -34,7 +35,7 @@ create table ContractorEmployee
   Employee_status varchar(1),
   IUD_Flag VARCHAR(50)
  );
-
+.IF ERRORCODE <> 0 THEN .QUIT 8
  create table AllContractorEmployee
  (
   Employee_ID VARCHAR(50), 
@@ -46,7 +47,7 @@ create table ContractorEmployee
   IUD_Flag VARCHAR(50)
  );
 
-	  
+	  .IF ERRORCODE <> 0 THEN .QUIT 8
 .LOGOFF; 
 
 9:15 PM 11/23/2017
