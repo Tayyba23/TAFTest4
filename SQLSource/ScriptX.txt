@@ -23,6 +23,7 @@ CREATE TABLE credit_acct
       acct_end_date DATE FORMAT 'YYYYMMDD',
       starting_balance DECIMAL(9,2) FORMAT '--Z(6)9.99',
       ending_balance DECIMAL(9,2) FORMAT '--Z(6)9.99');
+.if errorcode > 0 then .quit 255
 create table ContractorEmployee
  (
   Employee_ID VARCHAR(50), 
@@ -47,3 +48,5 @@ create table ContractorEmployee
 
 	  
 .LOGOFF; 
+
+9:15 PM 11/23/2017
