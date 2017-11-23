@@ -1,0 +1,49 @@
+.LOGON 153.65.144.102/dbc,dbc; 
+   DATABASE TAFD;
+   insert into tafd.AllContractorEmployee values ( 100,'Beenish','Zahoor','14-12-2016','14-12-2016 04:33:10','C',0);
+insert into tafd.AllContractorEmployee values ( 100,'Hira','Tehreem','13-11-2016','13-11-2017 04:33:20','C',0);
+insert into tafd.AllContractorEmployee values ( 100,'Myra','Syed','18-02-2017','15-12-2016 04:33:30','C',0);
+insert into tafd.AllContractorEmployee values ( 101,'Kanwal','Tariq','18-09-2016','42686.1896990741','C',0);
+insert into tafd.AllContractorEmployee values ( 101,'Kamran','Sattar','03/01/2017','42716.1898148148','C',0);
+insert into tafd.AllContractorEmployee values ( 101,'Ahmed','Hassan','18-09-2016','13-12-2016 04:33:30','C',0);
+insert into tafd.AllContractorEmployee values ( 102,'Tayyba','Fatima','29-04-2016','21-12-2016 04:33:15','C',0);
+insert into tafd.AllContractorEmployee values ( 102,'Fahad','Malik','29-04-2010','30-12-2016 04:33:25','C',0);
+insert into tafd.AllContractorEmployee values ( 102,'Tayyab','Mehmood','29-04-2016','42686.1899884259','C',0);
+insert into tafd.AllContractorEmployee values ( 103,'Harisa','Urooj','07/12/2016','18-12-2016 04:33:40','C',0);
+insert into tafd.AllContractorEmployee values ( 103,'Rizwan','Ahmed','07/12/2015','42686.1901041667','C',0);
+insert into tafd.AllContractorEmployee values ( 103,'Ahmed','Fawad','05/12/2016','42381.190162037','C',0);
+insert into tafd.AllContractorEmployee values ( 104,'Aqsa','Binte Idrees','18-10-2016','42716.1896990741','C',0);
+insert into tafd.AllContractorEmployee values ( 104,'Samar','Butt','10/10/2016','42412.1898148148','C',0);
+insert into tafd.AllContractorEmployee values ( 104,'Zohaib','Musadiq','18-3-2016','42502.1899305556','C',0);
+insert into tafd.AllContractorEmployee values ( 105,'Nimrah','Taruq','18-02-2017','42655.1897222222','C',0);
+insert into tafd.AllContractorEmployee values ( 105,'Samiah','Siddiqi','18-10-2016','42502.1900694444','C',0);
+insert into tafd.AllContractorEmployee values ( 105,'Naheed','Sultana','18-10-2016','42625.1901851852','C',0);
+insert into tafd.AllContractorEmployee values ( 106,'Asim','Israr','08/01/2016','24-12-2016 05:33:05','C',0);
+insert into tafd.AllContractorEmployee values ( 106,'Junaid','Taj','28-10-2013','14-12-2016 05:33:10','C',0);
+insert into tafd.AllContractorEmployee values ( 106,'John','Doe','28-10-2016','42472.1897569444','C',0);
+insert into tafd.AllContractorEmployee values ( 106,'Nimisha','Patel','28-10-2016','23-12-2016 06:33:20','C',0);
+insert into tafd.AllContractorEmployee values ( 106,'Bilal','Anjum','28-10-2010','16-12-2016 04:33:25','C',0);
+insert into tafd.AllContractorEmployee values ( 106,'Usman','Aziz','28-10-2017','20-12-2016 04:33:30','C',0);
+insert into tafd.AllContractorEmployee values ( 106,'Usman','Yaseen','28-11-2016','27-12-2016 04:33:35','C',0);
+insert into tafd.AllContractorEmployee values ( 106,'Usman','Azeem','28-10-2017','13-12-2016 04:33:40','C',0);
+insert into tafd.AllContractorEmployee values ( 106,'Mudassir','Abbass','28-10-2016','42381.1901041667','C',0);
+insert into tafd.AllContractorEmployee values ( 106,'Farooq','Munir','28-10-2013','42533.190162037','C',0);
+insert into tafd.AllContractorEmployee values ( 106,'Rabia','Shehzad','28-10-2011','42563.1902199074','C',0);
+insert into tafd.AllContractorEmployee values ( 106,'Adil','Parvez','28-10-2016','42594.1903935185','C',0);
+
+
+insert into TAFD.ContractorEmployee select * from TAFD.AllContractorEmployee where first_name = 'Rabia'; 
+
+
+insert into TAFD.checking_acct select cust_id,acct_nbr, 200,0.15,'Y','05/21/1994',null,256.11,7.84 from TAFD.accts where cust_id=1;
+insert into TAFD.checking_acct select cust_id,acct_nbr, 100,0.15,'Y','12/04/1995',null,882.15,1470.14 from TAFD.accts where cust_id=2;
+insert into TAFD.checking_acct select cust_id,acct_nbr, 100,0.15,'Y','02/12/1995',null,233.77,172.66 from TAFD.accts where cust_id=3;
+insert into TAFD.checking_acct select cust_id,acct_nbr, 3000,0,'Y','08/24/1994',null,4252.39,3312.27 from TAFD.accts where cust_id=4;
+insert into TAFD.checking_acct select cust_id,acct_nbr, 100,0.15,'Y','09/18/1995',null,352.97,2044.22 from TAFD.accts where cust_id=7;
+insert into TAFD.checking_acct select cust_id,acct_nbr, 200,0.15,'Y','09/01/1994',null,2176.17,16.89 from TAFD.accts where cust_id=5;
+insert into TAFD.checking_acct select cust_id,acct_nbr, 100,0.15,'Y','12/18/1995',null,177.94,669.16 from TAFD.accts where cust_id=6;
+insert into TAFD.checking_acct select cust_id,acct_nbr, 200,0.15,'Y','10/19/1993',null,833.4,55.68 from TAFD.accts where cust_id=8;
+
+
+	  
+.LOGOFF; 

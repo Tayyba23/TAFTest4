@@ -1,0 +1,49 @@
+.LOGON 153.65.144.102/dbc,dbc; 
+   DATABASE TAFD;
+
+ CREATE TABLE checking_acct (
+      cust_id INTEGER NOT NULL,
+      acct_nbr CHAR(16) ,
+      minimum_balance INTEGER,
+      per_check_fee DECIMAL(9,2) ,
+      account_active CHAR(1) ,
+      acct_start_date  DATE FORMAT 'MM/DD/YYYY' NOT NULL,
+      acct_end_date  DATE FORMAT 'MM/DD/YYYY' ,
+      starting_balance DECIMAL(9,2) ,
+      ending_balance DECIMAL(9,2)
+);
+CREATE SET TABLE credit_acct 
+     (
+      cust_id INTEGER NOT NULL,
+      acct_nbr CHAR(16) CHARACTER SET LATIN NOT CASESPECIFIC,
+      credit_limit INTEGER,
+      credit_rating SMALLINT,
+      account_active CHAR(1) CHARACTER SET LATIN NOT CASESPECIFIC,
+      acct_start_date DATE FORMAT 'YYYYMMDD',
+      acct_end_date DATE FORMAT 'YYYYMMDD',
+      starting_balance DECIMAL(9,2) FORMAT '--Z(6)9.99',
+      ending_balance DECIMAL(9,2) FORMAT '--Z(6)9.99');
+create table ContractorEmployee
+ (
+  Employee_ID VARCHAR(50), 
+  First_Name VARCHAR(50), 
+  Last_Name VARCHAR(50), 
+  Joining_date VARCHAR(50), 
+  row_time_stamp VARCHAR(50),
+  Employee_status varchar(1),
+  IUD_Flag VARCHAR(50)
+ );
+
+ create table AllContractorEmployee
+ (
+  Employee_ID VARCHAR(50), 
+  First_Name VARCHAR(50), 
+  Last_Name VARCHAR(50), 
+  Joining_date VARCHAR(50), 
+  row_time_stamp VARCHAR(50),
+  Employee_status varchar(1),
+  IUD_Flag VARCHAR(50)
+ );
+
+	  
+.LOGOFF; 
