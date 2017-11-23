@@ -1,11 +1,18 @@
-echo off
+
 bteq <ScriptX.txt>  ScriptX_Log.txt
 echo %ERRORLEVEL%
+SET /A a=%ERRORLEVEL%
+SET /A b=0 
+if %a% NEQ %b% (
+EXIT 
+)
 
-if %ERRORLEVEL% GTR  0 
-( EXIT -1 )
 bteq <ScriptY.txt>  ScriptY_Log.txt
+SET /A a=%ERRORLEVEL%
+SET /A b=0 
+if %a% NEQ %b% (
+EXIT 
+)
 
-IF %ERROR_LEVEL% GTR 0 ( EXIT -1 )
 
 
