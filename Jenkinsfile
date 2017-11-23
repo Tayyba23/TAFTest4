@@ -13,7 +13,7 @@ node {
 			}
 			catch(err){
 			            echo "Optional tests failed... don't propagate failure"
-						result = "FAIL" 
+						
 			}
         }
        stage ('Tests') {
