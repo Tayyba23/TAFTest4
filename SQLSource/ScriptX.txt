@@ -12,7 +12,7 @@
       starting_balance DECIMAL(9,2) ,
       ending_balance DECIMAL(9,2)
 );
-CREATE SET TABLE credit_acct 
+CREATE TABLE credit_acct 
      (
       cust_id INTEGER NOT NULL,
       acct_nbr CHAR(16) CHARACTER SET LATIN NOT CASESPECIFIC,
