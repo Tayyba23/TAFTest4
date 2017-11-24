@@ -1,7 +1,8 @@
 .LOGON 153.65.144.102/dbc,dbc; 
    DATABASE TAFD;
 insert into tafd.AllContractorEmployee values ( 100,'Beenish','Zahoor','14-12-2016','14-12-2016 04:33:10','C',0);
-.IF ERRORCODE <> 0 THEN .QUIT 8
+.IF ERRORCODE <> 0 THEN .GOTO NEXT
+.LABEL NEXT
 insert into tafd.AllContractorEmployee values ( 100,'Hira','Tehreem','13-11-2016','13-11-2017 04:33:20','C',0);
 insert into tafd.AllContractorEmployee values ( 100,'Myra','Syed','18-02-2017','15-12-2016 04:33:30','C',0);
 insert into tafd.AllContractorEmployee values ( 101,'Kanwal','Tariq','18-09-2016','42686.1896990741','C',0);
