@@ -1,3 +1,4 @@
+
 .LOGON 153.65.144.102/dbc,dbc; 
    DATABASE TAFD;
  CREATE TABLE checking_acct (
@@ -11,8 +12,7 @@
       starting_balance DECIMAL(9,2) ,
       ending_balance DECIMAL(9,2)
 );
-.IF ERRORCODE <> 0 THEN .GOTO NEXT
-.LABEL NEXT
+
 CREATE TABLE credit_acct 
      (
       cust_id INTEGER NOT NULL,
@@ -24,8 +24,7 @@ CREATE TABLE credit_acct
       acct_end_date DATE FORMAT 'YYYYMMDD',
       starting_balance DECIMAL(9,2) FORMAT '--Z(6)9.99',
       ending_balance DECIMAL(9,2) FORMAT '--Z(6)9.99');
-	  .IF ERRORCODE <> 0 THEN .GOTO NEXT
-.LABEL NEXT
+
 create table ContractorEmployee
  (
   Employee_ID VARCHAR(50), 
@@ -36,8 +35,7 @@ create table ContractorEmployee
   Employee_status varchar(1),
   IUD_Flag VARCHAR(50)
  );
-.IF ERRORCODE <> 0 THEN .GOTO NEXT
-.LABEL NEXT
+
  create table AllContractorEmployee
  (
   Employee_ID VARCHAR(50), 
@@ -48,8 +46,6 @@ create table ContractorEmployee
   Employee_status varchar(1),
   IUD_Flag VARCHAR(50)
  );
-	  
-	  
-	  
+
 .LOGOFF; 
 

@@ -10,6 +10,10 @@ node {
         stage ('Build') {
 		try {
             bat "cd SQLSource \n ExecScripts.bat"
+			def version = readFile "${env.WORKSPACE}/SQLSource/error_logfile.txt"
+			echo "${env.FILENAME}"
+			throw err
+			if(error_C0de > 0)
 			}
 			catch(err){
 			            echo "Optional tests failed... don't propagate failure"
