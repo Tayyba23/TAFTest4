@@ -13,6 +13,7 @@ node {
 			def version = readFile "${env.WORKSPACE}/SQLSource/error_logfile.txt"
 			echo " OUTPUTTING FILE CONTENTS"
 			echo "${env.WORKSPACE}"
+			
 			if(version == '')
 			echo "log file empty"
 			else
