@@ -12,7 +12,7 @@ node {
             bat "cd SQLSource \n ExecScripts.bat"
 			def version = readFile "${env.WORKSPACE}/SQLSource/error_logfile.txt"
 			echo " OUTPUTTING FILE CONTENTS"
-			echo "${env.version}"
+			echo "${env.WORKSPACE}"
 			throw err
 			
 			}
