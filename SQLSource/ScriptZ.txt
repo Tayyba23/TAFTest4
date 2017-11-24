@@ -1,0 +1,15 @@
+.LOGON 153.65.144.102/dbc,dbc; 
+   DATABASE TAFD;
+
+insert into TAFD.checking_acct select cust_id,acct_nbr, 200,0.15,'Y','05/21/1994',null,256.11,7.84 from TAFD.accts where cust_id=1;
+insert into TAFD.checking_acct select cust_id,acct_nbr, 100,0.15,'Y','12/04/1995',null,882.15,1470.14 from TAFD.accts where cust_id=2;
+insert into TAFD.checking_acct select cust_id,acct_nbr, 100,0.15,'Y','02/12/1995',null,233.77,172.66 from TAFD.accts where cust_id=3;
+insert into TAFD.checking_acct select cust_id,acct_nbr, 3000,0,'Y','08/24/1994',null,4252.39,3312.27 from TAFD.accts where cust_id=4;
+insert into TAFD.checking_acct select cust_id,acct_nbr, 100,0.15,'Y','09/18/1995',null,352.97,2044.22 from TAFD.accts where cust_id=7;
+insert into TAFD.checking_acct select cust_id,acct_nbr, 200,0.15,'Y','09/01/1994',null,2176.17,16.89 from TAFD.accts where cust_id=5;
+insert into TAFD.checking_acct select cust_id,acct_nbr, 100,0.15,'Y','12/18/1995',null,177.94,669.16 from TAFD.accts where cust_id=6;
+insert into TAFD.checking_acct select cust_id,acct_nbr, 200,0.15,'Y','10/19/1993',null,833.4,55.68 from TAFD.accts where cust_id=8;
+
+
+	  
+.LOGOFF; 
