@@ -1,0 +1,1210 @@
+BTEQ 15.10.01.01 Fri Nov 24 14:38:53 2017 PID: 13152
+ 
++---------+---------+---------+---------+---------+---------+---------+----
+.logon 153.65.144.102/dbc,
+
+ *** Logon successfully completed.
+ *** Teradata Database Release is 14.10.00.02                   
+ *** Teradata Database Version is 14.10.00.02                     
+ *** Transaction Semantics are BTET.
+ *** Session Character Set Name is 'ASCII'.
+ 
+ *** Total elapsed time was 1 second.
+ 
++---------+---------+---------+---------+---------+---------+---------+----
+Database TAFD;
+
+ *** New default database accepted. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+CREATE MULTISET TABLE TAFD.Exec_Status_Check_Rslt(test_id integer NOT NULL 
+GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CY
+CLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar(20),
+ test_type_cd integer, test_status varchar(10), process_type varchar(10), 
+process_name varchar(20), Process_Exec_Start_TS timestamp(6), Process_Exec
+_End_TS timestamp(6), Process_Exec_Status varchar(10), Records_Inserted va
+rchar(10), Records_Updated varchar(10), Records_Deleted varchar(10), scrip
+t_text VARCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_date v
+archar(40), user_id integer, env_id varchar(20), execution_timestamp TIMES
+TAMP(6), PRIMARY KEY (test_id));
+ *** Failure 3803 Table 'Exec_Status_Check_Rslt' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+CREATE MULTISET TABLE TAFD.Obj_Level_Row_Count_Rslt(test_id integer NOT NUL
+L GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO 
+CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar(20
+), test_type_cd integer, object_name varchar(30), db_name varchar(30), obj
+ect_row_count integer, business_date varchar(40), user_id integer, env_id 
+varchar(20), execution_timestamp timestamp(6), PRIMARY KEY (test_id));
+ *** Failure 3803 Table 'Obj_Level_Row_Count_Rslt' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+CREATE MULTISET TABLE TAFD.Script_Level_Row_Count_Rslt(test_id integer NOT 
+NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 
+NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar
+(20), test_type_cd integer, test_status varchar(10), process_type varchar(
+10), process_name varchar(20), Process_Exec_Start_TS timestamp(6), Process
+_Exec_End_TS timestamp(6), Process_Exec_Status varchar(10), Records_Insert
+ed varchar(10), Records_Updated varchar(10), Records_Deleted varchar(10), 
+script_text VARCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_d
+ate varchar(40), user_id integer, env_id varchar(20), execution_timestamp 
+TIMESTAMP(6), PRIMARY KEY (test_id));
+ *** Failure 3803 Table 'Script_Level_Row_Count_Rslt' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+CREATE MULTISET TABLE TAFD.Row_Count_Rslt ,NO FALLBACK, NO BEFORE JOURNAL, 
+NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_id int
+eger NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MI
+NVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_i
+d varchar(20), test_type_cd integer, test_status VARCHAR(10) CHARACTER SET
+ LATIN NOT CASESPECIFIC, source_name VARCHAR(250) CHARACTER SET LATIN NOT 
+CASESPECIFIC, source_type_cd integer, target_name VARCHAR(250) CHARACTER S
+ET LATIN NOT CASESPECIFIC, target_type_cd integer, source_path VARCHAR(250
+) CHARACTER SET LATIN NOT CASESPECIFIC, target_path VARCHAR(250) CHARACTER
+ SET LATIN NOT CASESPECIFIC, source_total_count varchar(50), target_total_
+count varchar(50), script_text VARCHAR(1500) CHARACTER SET LATIN NOT CASES
+PECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC, u
+ser_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6), PRIM
+ARY KEY (test_id));
+ *** Failure 3803 Table 'Row_Count_Rslt' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+CREATE MULTISET TABLE TAFD.Distinct_Value_Count_Rslt ,NO FALLBACK , NO BEFO
+RE JOURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO 
+(test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCRE
+MENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, 
+test_cycle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) C
+HARACTER SET LATIN NOT CASESPECIFIC, source_name VARCHAR(250) CHARACTER SE
+T LATIN NOT CASESPECIFIC, source_type_cd integer, target_name VARCHAR(250)
+ CHARACTER SET LATIN NOT CASESPECIFIC, target_type_cd integer, source_path
+ VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_path VARCHAR(25
+0) CHARACTER SET LATIN NOT CASESPECIFIC, source_column_name VARCHAR(250) C
+HARACTER SET LATIN NOT CASESPECIFIC, target_column_name VARCHAR(250) CHARA
+CTER SET LATIN NOT CASESPECIFIC, source_distinct_count varchar(50), target
+_distinct_count varchar(50), script_text VARCHAR(1500) CHARACTER SET LATIN
+ NOT CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASES
+PECIFIC, user_id integer, env_id varchar(20), execution_timestamp TIMESTAM
+P(6), PRIMARY KEY (test_id));
+ *** Failure 3803 Table 'Distinct_Value_Count_Rslt' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+CREATE MULTISET TABLE TAFD.Sum_Avg_Recon_Rslt ,NO FALLBACK , NO BEFORE JOUR
+NAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_i
+d integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY
+ 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cy
+cle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) CHARACTE
+R SET LATIN NOT CASESPECIFIC, source_name VARCHAR(250) CHARACTER SET LATIN
+ NOT CASESPECIFIC, source_type_cd integer, target_name VARCHAR(250) CHARAC
+TER SET LATIN NOT CASESPECIFIC, target_type_cd integer, source_path VARCHA
+R(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_path VARCHAR(250) CHAR
+ACTER SET LATIN NOT CASESPECIFIC, source_column_name VARCHAR(250) CHARACTE
+R SET LATIN NOT CASESPECIFIC, target_column_name VARCHAR(250) CHARACTER SE
+T LATIN NOT CASESPECIFIC, source_sum varchar(150), target_sum varchar(150)
+, source_avg varchar(150), target_avg varchar(150), script_text VARCHAR(15
+00) CHARACTER SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20) CHARAC
+TER SET LATIN NOT CASESPECIFIC, user_id integer, env_id varchar(20), execu
+tion_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+ *** Failure 3803 Table 'Sum_Avg_Recon_Rslt' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+CREATE MULTISET TABLE TAFD.Min_Max_Recon_Rslt ,NO FALLBACK , NO BEFORE JOUR
+NAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_i
+d integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY
+ 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cy
+cle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) CHARACTE
+R SET LATIN NOT CASESPECIFIC, source_name VARCHAR(250) CHARACTER SET LATIN
+ NOT CASESPECIFIC, source_type_cd integer, target_name VARCHAR(250) CHARAC
+TER SET LATIN NOT CASESPECIFIC, target_type_cd integer, source_path VARCHA
+R(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_path VARCHAR(250) CHAR
+ACTER SET LATIN NOT CASESPECIFIC, source_column_name VARCHAR(250) CHARACTE
+R SET LATIN NOT CASESPECIFIC, target_column_name VARCHAR(250) CHARACTER SE
+T LATIN NOT CASESPECIFIC, source_max varchar(150), target_max varchar(150)
+, source_min varchar(150), target_min varchar(150), script_text VARCHAR(15
+00) CHARACTER SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20) CHARAC
+TER SET LATIN NOT CASESPECIFIC, user_id integer, env_id varchar(20), execu
+tion_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+ *** Failure 3803 Table 'Min_Max_Recon_Rslt' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+CREATE MULTISET TABLE TAFD.Ri_Rslt ,NO FALLBACK , NO BEFORE JOURNAL, NO AFT
+ER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_id integer N
+OT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE
+ 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varc
+har(20), test_type_cd integer, test_status VARCHAR(10) CHARACTER SET LATIN
+ NOT CASESPECIFIC, no_of_violations INTEGER, parent_table_name VARCHAR(250
+) CHARACTER SET LATIN NOT CASESPECIFIC, child_table_name VARCHAR(250), par
+ent_db VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, child_db VARCHAR
+(250) CHARACTER SET LATIN NOT CASESPECIFIC, primary_key VARCHAR(250) CHARA
+CTER SET LATIN NOT CASESPECIFIC, foreign_key VARCHAR(250) CHARACTER SET LA
+TIN NOT CASESPECIFIC, script_text VARCHAR(1500) CHARACTER SET LATIN NOT CA
+SESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC
+, user_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6), P
+RIMARY KEY (test_id));
+ *** Failure 3803 Table 'Ri_Rslt' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+CREATE MULTISET TABLE TAFD.Summary_Tbl (test_id integer NOT NULL GENERATED 
+ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), test
+_type_cd varchar(10), test_cycle_id varchar(50), source varchar(50), targe
+t varchar(50), metadata_file_input varchar(3), application_output varchar(
+1), status varchar(15), PRIMARY KEY(test_id));
+ *** Failure 3803 Table 'Summary_Tbl' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+CREATE MULTISET TABLE TAFD.Null_Value_Count_Rslt ,NO FALLBACK , NO BEFORE J
+OURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (tes
+t_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT
+ BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test
+_cycle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) CHARA
+CTER SET LATIN NOT CASESPECIFIC, source_name VARCHAR(250) CHARACTER SET LA
+TIN NOT CASESPECIFIC, source_type_cd integer, target_name VARCHAR(250) CHA
+RACTER SET LATIN NOT CASESPECIFIC, target_type_cd integer, source_path VAR
+CHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_path VARCHAR(250) C
+HARACTER SET LATIN NOT CASESPECIFIC, source_column_name VARCHAR(250) CHARA
+CTER SET LATIN NOT CASESPECIFIC, target_column_name VARCHAR(250) CHARACTER
+ SET LATIN NOT CASESPECIFIC, source_null_count varchar(50), target_null_co
+unt varchar(50), script_text VARCHAR(1500) CHARACTER SET LATIN NOT CASESPE
+CIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC, use
+r_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6), PRIMAR
+Y KEY (test_id));
+ *** Failure 3803 Table 'Null_Value_Count_Rslt' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+CREATE MULTISET TABLE TAFD.Pk_Rslt ,NO FALLBACK , NO BEFORE JOURNAL, NO AFT
+ER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_id integer N
+OT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE
+ 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varc
+har(20), test_type_cd integer, test_status VARCHAR(10), full_row_status VA
+RCHAR(10), primary_key_status VARCHAR(10), table_name VARCHAR(80), pk_colu
+mns VARCHAR(100), full_row_count VARCHAR(20), primary_key_count VARCHAR(20
+), script_text VARCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, busines
+s_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC, user_id integer, 
+env_id varchar(20), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id
+));
+ *** Failure 3803 Table 'Pk_Rslt' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+CREATE MULTISET TABLE TAFD.Hh_Rslt ,NO FALLBACK , NO BEFORE JOURNAL, NO AFT
+ER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_id integer N
+OT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE
+ 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varc
+har(20), test_type_cd varchar(10), test_status VARCHAR(10), table_name var
+char(80), history_type_count integer, script_text VARCHAR(1300) CHARACTER 
+SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN 
+NOT CASESPECIFIC, user_id integer, env_id varchar(20), execution_timestamp
+ TIMESTAMP(6), PRIMARY KEY (test_id));
+ *** Failure 3803 Table 'Hh_Rslt' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+CREATE MULTISET TABLE TAFD.Release_Lookup (release_id varchar(200), test_cy
+cle_id varchar(200));
+ *** Failure 3803 Table 'Release_Lookup' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+CREATE MULTISET TABLE TAFD.Minus_Test_Rslt ,NO FALLBACK , NO BEFORE JOURNAL
+, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_id i
+nteger NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 
+MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle
+_id varchar(20), test_type_cd integer, test_status VARCHAR(10) CHARACTER S
+ET LATIN NOT CASESPECIFIC, db_name_a VARCHAR(50) CHARACTER SET LATIN NOT C
+ASESPECIFIC, tbl_name_a VARCHAR(50) CHARACTER SET LATIN NOT CASESPECIFIC, 
+db_name_b VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, tbl_name_b VA
+RCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, a_minus_b VARCHAR(20) CHA
+RACTER SET LATIN NOT CASESPECIFIC, b_minus_a VARCHAR(20) CHARACTER SET LAT
+IN NOT CASESPECIFIC, row_count_a integer, row_count_b integer, script_text
+ VARCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_date VARCHAR
+(20) CHARACTER SET LATIN NOT CASESPECIFIC, user_id integer, env_id varchar
+(20), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+ *** Failure 3803 Table 'Minus_Test_Rslt' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+CREATE MULTISET TABLE TAFD.Surrogate_Key_Rslt ,NO FALLBACK , NO BEFORE JOUR
+NAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_i
+d integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY
+ 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cy
+cle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) CHARACTE
+R SET LATIN NOT CASESPECIFIC,  src_db_name VARCHAR(50) CHARACTER SET LATIN
+ NOT CASESPECIFIC, src_tbl_name VARCHAR(50) CHARACTER SET LATIN NOT CASESP
+ECIFIC, surr_key_db_name VARCHAR(50) CHARACTER SET LATIN NOT CASESPECIFIC,
+ surr_key_tbl_name VARCHAR(50) CHARACTER SET LATIN NOT CASESPECIFIC, multi
+ple_src_keys integer, multiple_surr_keys integer, src_keys_without_surr in
+teger, surr_keys_without_src integer, script_text VARCHAR(1500) CHARACTER 
+SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN 
+NOT CASESPECIFIC, user_id integer, env_id varchar(20), execution_timestamp
+ TIMESTAMP(6), PRIMARY KEY (test_id));
+ *** Failure 3803 Table 'Surrogate_Key_Rslt' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+CREATE MULTISET TABLE TAFD.TRN_TST_Row_Count_Rslt ,NO FALLBACK, NO BEFORE J
+OURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (tes
+t_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT
+ BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test
+_cycle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) CHARA
+CTER SET LATIN NOT CASESPECIFIC, source_name VARCHAR(250) CHARACTER SET LA
+TIN NOT CASESPECIFIC, source_type_cd integer, target_name VARCHAR(250) CHA
+RACTER SET LATIN NOT CASESPECIFIC, target_type_cd integer, source_path VAR
+CHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_path VARCHAR(250) C
+HARACTER SET LATIN NOT CASESPECIFIC, source_total_count varchar(50), targe
+t_total_count varchar(50), script_text VARCHAR(1500) CHARACTER SET LATIN N
+OT CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPE
+CIFIC, user_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(
+6), PRIMARY KEY (test_id));
+ *** Failure 3803 Table 'TRN_TST_Row_Count_Rslt' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+CREATE MULTISET TABLE TAFD.TRN_TST_Distinct_Value_Count_Rslt ,NO FALLBACK ,
+ NO BEFORE JOURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLO
+CKRATIO (test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH
+ 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id i
+nteger, test_cycle_id varchar(20), test_type_cd integer, test_status VARCH
+AR(10) CHARACTER SET LATIN NOT CASESPECIFIC, source_name VARCHAR(250) CHAR
+ACTER SET LATIN NOT CASESPECIFIC, source_type_cd integer, target_name VARC
+HAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_type_cd integer, sou
+rce_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_path VA
+RCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_column_name VARCHA
+R(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_column_name VARCHAR(25
+0) CHARACTER SET LATIN NOT CASESPECIFIC, source_distinct_count varchar(50)
+, target_distinct_count varchar(50), script_text VARCHAR(1500) CHARACTER S
+ET LATIN NOT CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN N
+OT CASESPECIFIC, user_id integer, env_id varchar(20), execution_timestamp 
+TIMESTAMP(6), PRIMARY KEY (test_id));
+ *** Failure 3803 Table 'TRN_TST_Distinct_Value_Count_Rslt' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+CREATE MULTISET TABLE TAFD.TRN_TST_Sum_Avg_Recon_Rslt ,NO FALLBACK , NO BEF
+ORE JOURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO
+ (test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCR
+EMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer,
+ test_cycle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) 
+CHARACTER SET LATIN NOT CASESPECIFIC, source_name VARCHAR(250) CHARACTER S
+ET LATIN NOT CASESPECIFIC, source_type_cd integer, target_name VARCHAR(250
+) CHARACTER SET LATIN NOT CASESPECIFIC, target_type_cd integer, source_pat
+h VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_path VARCHAR(2
+50) CHARACTER SET LATIN NOT CASESPECIFIC, source_column_name VARCHAR(250) 
+CHARACTER SET LATIN NOT CASESPECIFIC, target_column_name VARCHAR(250) CHAR
+ACTER SET LATIN NOT CASESPECIFIC, source_sum varchar(150), target_sum varc
+har(150), source_avg varchar(150), target_avg varchar(150), script_text VA
+RCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20
+) CHARACTER SET LATIN NOT CASESPECIFIC, user_id integer, env_id varchar(20
+), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+ *** Failure 3803 Table 'TRN_TST_Sum_Avg_Recon_Rslt' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+CREATE MULTISET TABLE TAFD.TRN_TST_Min_Max_Recon_Rslt ,NO FALLBACK , NO BEF
+ORE JOURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO
+ (test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCR
+EMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer,
+ test_cycle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) 
+CHARACTER SET LATIN NOT CASESPECIFIC, source_name VARCHAR(250) CHARACTER S
+ET LATIN NOT CASESPECIFIC, source_type_cd integer, target_name VARCHAR(250
+) CHARACTER SET LATIN NOT CASESPECIFIC, target_type_cd integer, source_pat
+h VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_path VARCHAR(2
+50) CHARACTER SET LATIN NOT CASESPECIFIC, source_column_name VARCHAR(250) 
+CHARACTER SET LATIN NOT CASESPECIFIC, target_column_name VARCHAR(250) CHAR
+ACTER SET LATIN NOT CASESPECIFIC, source_max varchar(150), target_max varc
+har(150), source_min varchar(150), target_min varchar(150), script_text VA
+RCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20
+) CHARACTER SET LATIN NOT CASESPECIFIC, user_id integer, env_id varchar(20
+), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+ *** Failure 3803 Table 'TRN_TST_Min_Max_Recon_Rslt' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+CREATE MULTISET TABLE TAFD.TRN_TST_Null_Value_Count_Rslt ,NO FALLBACK , NO 
+BEFORE JOURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRA
+TIO (test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 I
+NCREMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integ
+er, test_cycle_id varchar(20), test_type_cd integer, test_status VARCHAR(1
+0) CHARACTER SET LATIN NOT CASESPECIFIC, source_name VARCHAR(250) CHARACTE
+R SET LATIN NOT CASESPECIFIC, source_type_cd integer, target_name VARCHAR(
+250) CHARACTER SET LATIN NOT CASESPECIFIC, target_type_cd integer, source_
+path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_path VARCHA
+R(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_column_name VARCHAR(25
+0) CHARACTER SET LATIN NOT CASESPECIFIC, target_column_name VARCHAR(250) C
+HARACTER SET LATIN NOT CASESPECIFIC, source_null_count varchar(50), target
+_null_count varchar(50), script_text VARCHAR(1500) CHARACTER SET LATIN NOT
+ CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPECI
+FIC, user_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6)
+, PRIMARY KEY (test_id));
+ *** Failure 3803 Table 'TRN_TST_Null_Value_Count_Rslt' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+drop table TAFD.Source_Type_Lookup;
+
+ *** Table has been dropped. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+drop table TAFD.Target_Type_Lookup;
+
+ *** Table has been dropped. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+drop table TAFD.Env_Lookup;
+
+ *** Table has been dropped. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+drop table TAFD.File_Delimeter_Lookup;
+
+ *** Table has been dropped. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+drop table TAFD.Stream_Lookup;
+
+ *** Table has been dropped. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+drop table TAFD.Sub_Stream_Lookup;
+
+ *** Table has been dropped. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+drop table TAFD.Module_Lookup;
+
+ *** Table has been dropped. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+create multiset table TAFD.Inp_Config_Param (test_cycle_id varchar(20), ins
+ertion_timestamp TIMESTAMP(6), config_parameter varchar(50), parameter_val
+ue varchar(50), category varchar(50));
+ *** Failure 3803 Table 'Inp_Config_Param' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+create multiset table TAFD.Inp_Row_Count_And_Metrics (test_cycle_id varchar
+(20), insertion_timestamp TIMESTAMP(6), stream_id varchar(20), sub_stream_
+id varchar(20), env_id varchar(20), source_path varchar(20), source_name v
+archar(20), source_type_cd integer, target_path varchar(20), target_name v
+archar(20), target_type_cd integer, file_delimeter_type_cd varchar(4), row
+_count varchar(1), distinct_count varchar(1), sum_avg varchar(1), min_max 
+varchar(1), null_count varchar(1), mapping_specification varchar(4));
+ *** Failure 3803 Table 'Inp_Row_Count_And_Metrics' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+create multiset table TAFD.Inp_Column_Mapping (test_cycle_id varchar(20), i
+nsertion_timestamp TIMESTAMP(6), source_path varchar(50), source_name varc
+har(50), target_path varchar(50), target_name varchar(50), source_column v
+archar(50), target_column varchar(50), is_numeric varchar(2), auto_detect_
+datatype varchar(2));
+ *** Failure 3803 Table 'Inp_Column_Mapping' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+create multiset table TAFD.Inp_Release_Package_Info (test_cycle_id varchar(
+20), insertion_timestamp TIMESTAMP(6), env_id varchar(20), db_name varchar
+(50), object_name varchar(50), object_type varchar(10), status varchar(10)
+, process_name varchar(50), process_type varchar(10));
+ *** Failure 3803 Table 'Inp_Release_Package_Info' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+create multiset table TAFD.Inp_Dup_Verification (test_cycle_id varchar(20),
+ insertion_timestamp TIMESTAMP(6), stream_id varchar(20), sub_stream_id va
+rchar(20), env_id varchar(20), db_name varchar(50), table_name varchar(50)
+, pk_column_name varchar(50));
+ *** Failure 3803 Table 'Inp_Dup_Verification' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+create multiset table TAFD.Inp_Table_And_Dup_Info (test_cycle_id varchar(20
+), insertion_timestamp TIMESTAMP(6), db_name varchar(50), table_name varch
+ar(50), dup_type varchar(4), open_records varchar(2), end_date_col varchar
+(30));
+ *** Failure 3803 Table 'Inp_Table_And_Dup_Info' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+create multiset table TAFD.Inp_Ri_Verification (test_cycle_id varchar(20), 
+insertion_timestamp TIMESTAMP(6), stream_id varchar(20), sub_stream_id var
+char(20), env_id varchar(20), parent_db_name varchar(50), parent_table_nam
+e varchar(50), pk_columns varchar(50), child_db_name varchar(50), child_ta
+ble_name varchar(50), fk_columns varchar(50));
+ *** Failure 3803 Table 'Inp_Ri_Verification' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+create multiset table TAFD.Inp_Hh_Verification (test_cycle_id varchar(20), 
+insertion_timestamp TIMESTAMP(6), stream_id varchar(20), sub_stream_id var
+char(20), env_id varchar(20), db_name varchar(50), table_name varchar(50),
+ column_name varchar(50), pk_column varchar(1), start_ts_column varchar(1)
+, end_ts_column varchar(1));
+ *** Failure 3803 Table 'Inp_Hh_Verification' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+create multiset table TAFD.Inp_Hh_Test_Detail (test_cycle_id varchar(20), i
+nsertion_timestamp TIMESTAMP(6), db_name varchar(50), table_name varchar(5
+0), reverse varchar(1), overlap varchar(1), gap varchar(1), test_detail va
+rchar(10));
+ *** Failure 3803 Table 'Inp_Hh_Test_Detail' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+create multiset table TAFD.Inp_Exception_List (test_cycle_id varchar(20), i
+nsertion_timestamp TIMESTAMP(6), exception_column varchar(50));
+ *** Failure 3803 Table 'Inp_Exception_List' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+create multiset table TAFD.Inp_Minus_Test (test_cycle_id varchar(20), inser
+tion_timestamp TIMESTAMP(6), stream_id varchar(20), sub_stream_id varchar(
+20), env_id varchar(20), db_name_a varchar(50), table_name_a varchar(50), 
+db_name_b varchar(50), table_name_b varchar(50), a_minus_b varchar(1), b_m
+inus_a varchar(1), exclude_technical_columns varchar(1), mapping_specifica
+tion varchar(4));
+ *** Failure 3803 Table 'Inp_Minus_Test' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+create multiset table TAFD.Inp_Minus_Column_Mapping (test_cycle_id varchar(
+20), insertion_timestamp TIMESTAMP(6), db_name_a varchar(50), table_name_a
+ varchar(50), db_name_b varchar(50), table_name_b varchar(50), column_name
+_a varchar(50), column_name_b varchar(50));
+ *** Failure 3803 Table 'Inp_Minus_Column_Mapping' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+create multiset table TAFD.Inp_Surrogate_Key_Test (test_cycle_id varchar(20
+), insertion_timestamp TIMESTAMP(6), stream_id varchar(20), sub_stream_id 
+varchar(20), env_id varchar(20), src_db_name varchar(50), src_tbl_name var
+char(50), surr_key_db_name varchar(50), surr_key_tbl_name varchar(50), nat
+ural_key_cols varchar(100), surr_key_col varchar(50), concat_natural_key_c
+ol varchar(50), natural_key_function varchar(1000));
+ *** Failure 3803 Table 'Inp_Surrogate_Key_Test' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+create multiset table TAFD.Inp_Test_Script_Execution (test_cycle_id varchar
+(20), insertion_timestamp TIMESTAMP(6), stream_id varchar(20), sub_stream_
+id varchar(20), env_id varchar(20), test_script_path varchar(100), test_re
+sultset_db varchar(50), test_resultset_tbl varchar(50), int_layer_db varch
+ar(50), int_layer_tbl varchar(50), int_layer_script varchar(100));
+ *** Failure 3803 Table 'Inp_Test_Script_Execution' already exists.
+                Statement# 1, Info =0 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', '
+Hostname', '153.65.144.102', '');insert into TAFD.Inp_Config_Param values 
+('1.172', '2017.11.24.14.38.53', 'Database', 'TAFD', '');insert into TAFD.
+Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'Username', 'dbc'
+, '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38
+.53', 'Password', 'dbc', '');insert into TAFD.Inp_Config_Param values ('1.
+172', '2017.11.24.14.38.53', 'Modules To Run', '6.0', '');insert into TAFD
+.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'Business Date',
+ '42705.0', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.1
+1.24.14.38.53', 'Server Access Username', '', '');insert into TAFD.Inp_Con
+fig_Param values ('1.172', '2017.11.24.14.38.53', 'Server Access Password'
+, '', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.1
+4.38.53', 'Release Package ID', 'A', '');insert into TAFD.Inp_Config_Param
+ values ('1.172', '2017.11.24.14.38.53', 'Reset Test Cycle', 'F', '');inse
+rt into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'All
+ Teradata Hosts', '153.65.144.102', '');insert into TAFD.Inp_Config_Param 
+values ('1.172', '2017.11.24.14.38.53', 'All Teradata Users', 'dbc', '');i
+nsert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', '
+All Teradata Passwords', 'dbc', '');insert into TAFD.Inp_Config_Param valu
+es ('1.172', '2017.11.24.14.38.53', 'High Date', '9999-12-31 23:59:59', ''
+);insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53'
+, 'script_execution_server_hostname', '', '');insert into TAFD.Inp_Config_
+Param values ('1.172', '2017.11.24.14.38.53', 'script_execution_server_use
+rname', '', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.1
+1.24.14.38.53', 'script_execution_server_password', '', '');insert into TA
+FD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'BTEQ File Ext
+ensions', 'bt,bteq,btq', '');insert into TAFD.Inp_Config_Param values ('1.
+172', '2017.11.24.14.38.53', 'FASTLOAD File Extensions', 'fld,fl', '');ins
+ert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'MU
+LTILOAD File Extensions', 'mld,ml', '');insert into TAFD.Inp_Config_Param 
+values ('1.172', '2017.11.24.14.38.53', 'TPT File Extensions', 'tpt', '');
+insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 
+'execute_remotely', 'T', '');insert into TAFD.Inp_Config_Param values ('1.
+172', '2017.11.24.14.38.53', 'Create Result Tables', 'T', '');insert into 
+TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'Continue Ex
+ecution If Objects Do Not Exist', 'T', '');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+insert into TAFD.Inp_Row_Count_And_Metrics values ('1.172', '2017.11.24.14.
+38.53', '1', '1', 'TAFPipe1', 'TAFD', 'AllContractorEmployees', 1, 'TAFD',
+ 'AllContractorEmployees', 1, 'NA', 'Y', 'Y', 'Y', 'Y', 'Y', 'NA');insert 
+into TAFD.Inp_Row_Count_And_Metrics values ('1.172', '2017.11.24.14.38.53'
+, '1', '1', 'TAFPipe1', 'TAFD', 'ContractorEmployee', 1, 'TAFD', 'Contract
+orEmployee', 1, 'NA', 'Y', 'Y', 'Y', 'Y', 'Y', 'NA');insert into TAFD.Inp_
+Row_Count_And_Metrics values ('1.172', '2017.11.24.14.38.53', '1', '1', 'T
+AFPipe2', 'TAFD', 'checking_acct', 1, 'TAFD', 'checking_acct', 1, 'NA', 'Y
+', 'Y', 'Y', 'Y', 'Y', 'NA');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+insert into TAFD.Inp_Release_Package_Info values ('1.172', '2017.11.24.14.3
+8.53', 'TST01', 'tafd_db', 'try_tbl', 'Table', 'New', '', 'TPT');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+insert into TAFD.Inp_Dup_Verification values ('1.172', '2017.11.24.14.38.53
+', '1', '1', 'TST03', 'tafd_db', 'try_tbl', 'col1');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+insert into TAFD.Inp_Table_And_Dup_Info values ('1.172', '2017.11.24.14.38.
+53', 'tafd_db', 'try_tbl', 'ALL', 'Y', 'col4');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+insert into TAFD.Inp_Ri_Verification values ('1.172', '2017.11.24.14.38.53'
+, '1', '1', 'TST01', 'tafd_db', 'test_tbl', 'stream_id', 'tafd_db', 'test_
+tbl', 'stream_id');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+insert into TAFD.Inp_Hh_Verification values ('1.172', '2017.11.24.14.38.53'
+, '1', '1', 'TAFPipe1', 'TAFD_DB', 'test_tbl2', 'stream_id', 'Y', '', '');
+insert into TAFD.Inp_Hh_Verification values ('1.172', '2017.11.24.14.38.53
+', '1', '1', 'TAFPipe2', 'TAFD_DB', 'test_tbl3', 'process_exec_start_time'
+, '', 'Y', '');insert into TAFD.Inp_Hh_Verification values ('1.172', '2017
+.11.24.14.38.53', '1', '1', 'TAFPipe3', 'TAFD_DB', 'test_tbl4', 'process_e
+xec_end_time', '', '', 'Y');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
+ *** Insert completed. One row added. 
+
+ *** Insert completed. One row added. 
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+
+
+
+
+insert into TAFD.Inp_Column_Mapping values ('1.172', '2017.11.24.14.38.53',
+ 'C:\Users\kt186036\Desktop\File Comparison', 'employee_comma - Copy (1).t
+xt', 'C:\Users\kt186036\Desktop\File Comparison', 'employee_comma - Copy (
+2).txt', 'Flag', 'Flag', 'Y', 'N');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+insert into TAFD.Inp_Minus_Test values ('1.172', '2017.11.24.14.38.53', '1'
+, '1', 'TAFPipe1', 'TAFD', 'Employee', 'TAFD', 'PermEmployee', 'Y', 'Y', '
+Y', 'NA');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+insert into TAFD.Inp_Surrogate_Key_Test values ('1.172', '2017.11.24.14.38.
+53', '1', '1', 'TST01', 'tafd_db', 'src_tbl', 'tafd_db', 'surr_key_tbl', '
+src_key1,src_key2', 'surr_key', 'select tafd_db.src_tbl.src_key1 || '_' ||
+ tafd_db.src_tbl.src_key2', 'concat_src_key');insert into TAFD.Inp_Test_Sc
+ript_Execution values ('1.172', '2017.11.24.14.38.53', '1', '1', 'TST01', 
+'C:/Users/kt186036/Desktop/TAS/CORE_CHART_OF_ACCOUNTS_DATA_LOAD_SCRIPT.btq
+', 'TAS_DB', 'TMP_CORE_COMPANY', 'TAS_DB', 'CORE_COMPANY', '');
+
+insert into TAFD.Inp_Surrogate_Key_Test values ('1.172', '2017.11.24.14.38
+.53', '1', '1', 'TST01', 'tafd_db', 'src_tbl', 'tafd_db', 'surr_key_tbl', 
+'src_key1,src_key2', 'surr_key', 'select tafd_db.src_tbl.src_key1 || '_' |
+| tafd_db.src_tbl.src_key2', 'concat_src_key');insert into TAFD.Inp_Test_S
+cript_Execution values ('1.172', '2017.11.24.14.38.53', '1', '1', 'TST01',
+ 'C:/Users/kt186036/Desktop/TAS/CORE_CHART_OF_ACCOUNTS_DATA_LOAD_SCRIPT.bt
+q', 'TAS_DB', 'TMP_CORE_COMPANY', 'TAS_DB', 'CORE_COMPANY', '');
+                                                                        $
+ *** Failure 3707 Syntax error, expected something like ',' or ')' between a
+  string or a Unicode character literal and the word '_'.
+                Statement# 1, Info =221 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+
+
+
+create set table TAFD.Source_Type_Lookup (source_type_cd integer, source_ty
+pe_name varchar(30), source_type_desc varchar(40));
+
+ *** Table has been created. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+create set table TAFD.Target_Type_Lookup (target_type_cd integer, target_ty
+pe_name varchar(30), target_type_desc varchar(40));
+
+ *** Table has been created. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+create set table TAFD.Env_Lookup (environment_id varchar(20), environment_n
+ame varchar(30), environment_desc varchar(40));
+
+ *** Table has been created. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+create set table TAFD.File_Delimeter_Lookup (file_delimeter_type_cd integer
+, file_delimeter varchar(30), file_delimeter_desc varchar(40));
+
+ *** Table has been created. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+create set table TAFD.Stream_Lookup (stream_id integer, stream_name varchar
+(30), stream_desc varchar(40));
+
+ *** Table has been created. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+create set table TAFD.Sub_Stream_Lookup (sub_stream_id integer, sub_stream_
+name varchar(30), sub_stream_desc varchar(40));
+
+ *** Table has been created. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+create set table TAFD.Module_Lookup (module_code integer, module_name varch
+ar(80));
+
+ *** Table has been created. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+insert into TAFD.Source_Type_Lookup values (1.0, 'Teradata', 'Teradata data
+base object');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Source_Type_Lookup values (2.0, 'File', 'Data File');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Source_Type_Lookup values (3.0, 'Oracle', 'Oracle database
+ object');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Source_Type_Lookup values (4.0, 'Hadoop', 'Hadoop object')
+;
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Source_Type_Lookup values (5.0, 'Other', 'Other');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Target_Type_Lookup values (1.0, 'Teradata', 'Teradata data
+base object');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Target_Type_Lookup values (2.0, 'Oracle', 'Oracle database
+ object');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Target_Type_Lookup values (3.0, 'Hadoop', 'Hadoop object')
+;
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Target_Type_Lookup values (4.0, 'Other', 'Other');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Env_Lookup values ('TST01', 'Integration Test Environment'
+, 'Test Environment for Integration Test Executions');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Env_Lookup values ('TST02', 'System Test Environment', 'Te
+st Environment for System Test Executions');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Env_Lookup values ('TST03', 'Backup Test Environment', 'Te
+st Environment for Data Backup');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Env_Lookup values ('UAT01', 'User Acceptance Test Environm
+ent', 'Test Environment for User Acceptance Test Executions');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.File_Delimeter_Lookup values (1.0, ',', 'Comma');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.File_Delimeter_Lookup values (2.0, ':', 'Colon');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.File_Delimeter_Lookup values (3.0, ';', 'Semicolon');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.File_Delimeter_Lookup values (4.0, '|', 'Pipe');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.File_Delimeter_Lookup values (5.0, '                     '
+, 'Tab');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Stream_Lookup values (1.0, 'Customer', 'Customer business 
+area');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Stream_Lookup values (2.0, 'Revenue', 'Revenue business ar
+ea');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Stream_Lookup values (3.0, 'Usage', 'Usage business area')
+;
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Stream_Lookup values (4.0, 'Data_Staging', 'General Data S
+taging from Source');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Sub_Stream_Lookup values (1.0, 'Customer_Data_Staging', 'C
+ustomer business area data staging');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Sub_Stream_Lookup values (2.0, 'Customer_DI', 'Customer bu
+siness area DI');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Sub_Stream_Lookup values (3.0, 'Customer_BI', 'Customer bu
+siness area BI');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Module_Lookup values (3.0, 'Execution Status Check');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Module_Lookup values (4.0, '0 row count identification on 
+DB object level');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Module_Lookup values (5.0, '0 row count identification at 
+loading script/job level');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Module_Lookup values (6.0, 'Row Count Verification Module'
+);
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Module_Lookup values (7.0, 'Distinct Value Count Module');
+
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Module_Lookup values (8.0, 'Sum/Avg Reconciliation Module'
+);
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Module_Lookup values (9.0, 'Min/Max Reconciliation Module'
+);
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Module_Lookup values (10.0, 'RI verification Module');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Module_Lookup values (11.0, 'Null Value identification Mod
+ule');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Module_Lookup values (12.0, 'PK and Full Row Duplicate ide
+ntification Module');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Module_Lookup values (13.0, 'History Verification');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Module_Lookup values (14.0, 'Minus Test');
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+insert into TAFD.Module_Lookup values (15.0, 'Surrogate Key Verification');
+
+
+ *** Insert completed. One row added. 
+ *** Total elapsed time was 1 second.
+
+
++---------+---------+---------+---------+---------+---------+---------+----
+
+.LOGOFF;
+ *** You are now logged off from the DBC.
++---------+---------+---------+---------+---------+---------+---------+----
+.quit
+ *** Exiting BTEQ...
+ *** RC (return code) = 8 

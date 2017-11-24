@@ -1,0 +1,167 @@
+.logon 153.65.144.102/dbc,dbc;
+Database TAFD;
+
+CREATE MULTISET TABLE TAFD.Exec_Status_Check_Rslt(test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar(20), test_type_cd integer, test_status varchar(10), process_type varchar(10), process_name varchar(20), Process_Exec_Start_TS timestamp(6), Process_Exec_End_TS timestamp(6), Process_Exec_Status varchar(10), Records_Inserted varchar(10), Records_Updated varchar(10), Records_Deleted varchar(10), script_text VARCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_date varchar(40), user_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+
+CREATE MULTISET TABLE TAFD.Obj_Level_Row_Count_Rslt(test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar(20), test_type_cd integer, object_name varchar(30), db_name varchar(30), object_row_count integer, business_date varchar(40), user_id integer, env_id varchar(20), execution_timestamp timestamp(6), PRIMARY KEY (test_id));
+
+CREATE MULTISET TABLE TAFD.Script_Level_Row_Count_Rslt(test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar(20), test_type_cd integer, test_status varchar(10), process_type varchar(10), process_name varchar(20), Process_Exec_Start_TS timestamp(6), Process_Exec_End_TS timestamp(6), Process_Exec_Status varchar(10), Records_Inserted varchar(10), Records_Updated varchar(10), Records_Deleted varchar(10), script_text VARCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_date varchar(40), user_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+
+CREATE MULTISET TABLE TAFD.Row_Count_Rslt ,NO FALLBACK, NO BEFORE JOURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) CHARACTER SET LATIN NOT CASESPECIFIC, source_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_type_cd integer, target_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_type_cd integer, source_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_total_count varchar(50), target_total_count varchar(50), script_text VARCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC, user_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+
+CREATE MULTISET TABLE TAFD.Distinct_Value_Count_Rslt ,NO FALLBACK , NO BEFORE JOURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) CHARACTER SET LATIN NOT CASESPECIFIC, source_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_type_cd integer, target_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_type_cd integer, source_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_column_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_column_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_distinct_count varchar(50), target_distinct_count varchar(50), script_text VARCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC, user_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+
+CREATE MULTISET TABLE TAFD.Sum_Avg_Recon_Rslt ,NO FALLBACK , NO BEFORE JOURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) CHARACTER SET LATIN NOT CASESPECIFIC, source_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_type_cd integer, target_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_type_cd integer, source_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_column_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_column_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_sum varchar(150), target_sum varchar(150), source_avg varchar(150), target_avg varchar(150), script_text VARCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC, user_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+
+CREATE MULTISET TABLE TAFD.Min_Max_Recon_Rslt ,NO FALLBACK , NO BEFORE JOURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) CHARACTER SET LATIN NOT CASESPECIFIC, source_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_type_cd integer, target_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_type_cd integer, source_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_column_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_column_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_max varchar(150), target_max varchar(150), source_min varchar(150), target_min varchar(150), script_text VARCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC, user_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+
+CREATE MULTISET TABLE TAFD.Ri_Rslt ,NO FALLBACK , NO BEFORE JOURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) CHARACTER SET LATIN NOT CASESPECIFIC, no_of_violations INTEGER, parent_table_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, child_table_name VARCHAR(250), parent_db VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, child_db VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, primary_key VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, foreign_key VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, script_text VARCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC, user_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+
+CREATE MULTISET TABLE TAFD.Summary_Tbl (test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), test_type_cd varchar(10), test_cycle_id varchar(50), source varchar(50), target varchar(50), metadata_file_input varchar(3), application_output varchar(1), status varchar(15), PRIMARY KEY(test_id));
+
+CREATE MULTISET TABLE TAFD.Null_Value_Count_Rslt ,NO FALLBACK , NO BEFORE JOURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) CHARACTER SET LATIN NOT CASESPECIFIC, source_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_type_cd integer, target_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_type_cd integer, source_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_column_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_column_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_null_count varchar(50), target_null_count varchar(50), script_text VARCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC, user_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+
+CREATE MULTISET TABLE TAFD.Pk_Rslt ,NO FALLBACK , NO BEFORE JOURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar(20), test_type_cd integer, test_status VARCHAR(10), full_row_status VARCHAR(10), primary_key_status VARCHAR(10), table_name VARCHAR(80), pk_columns VARCHAR(100), full_row_count VARCHAR(20), primary_key_count VARCHAR(20), script_text VARCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC, user_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+
+CREATE MULTISET TABLE TAFD.Hh_Rslt ,NO FALLBACK , NO BEFORE JOURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar(20), test_type_cd varchar(10), test_status VARCHAR(10), table_name varchar(80), history_type_count integer, script_text VARCHAR(1300) CHARACTER SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC, user_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+
+CREATE MULTISET TABLE TAFD.Release_Lookup (release_id varchar(200), test_cycle_id varchar(200));
+
+CREATE MULTISET TABLE TAFD.Minus_Test_Rslt ,NO FALLBACK , NO BEFORE JOURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) CHARACTER SET LATIN NOT CASESPECIFIC, db_name_a VARCHAR(50) CHARACTER SET LATIN NOT CASESPECIFIC, tbl_name_a VARCHAR(50) CHARACTER SET LATIN NOT CASESPECIFIC, db_name_b VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, tbl_name_b VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, a_minus_b VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC, b_minus_a VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC, row_count_a integer, row_count_b integer, script_text VARCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC, user_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+
+CREATE MULTISET TABLE TAFD.Surrogate_Key_Rslt ,NO FALLBACK , NO BEFORE JOURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) CHARACTER SET LATIN NOT CASESPECIFIC,  src_db_name VARCHAR(50) CHARACTER SET LATIN NOT CASESPECIFIC, src_tbl_name VARCHAR(50) CHARACTER SET LATIN NOT CASESPECIFIC, surr_key_db_name VARCHAR(50) CHARACTER SET LATIN NOT CASESPECIFIC, surr_key_tbl_name VARCHAR(50) CHARACTER SET LATIN NOT CASESPECIFIC, multiple_src_keys integer, multiple_surr_keys integer, src_keys_without_surr integer, surr_keys_without_src integer, script_text VARCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC, user_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+
+CREATE MULTISET TABLE TAFD.TRN_TST_Row_Count_Rslt ,NO FALLBACK, NO BEFORE JOURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) CHARACTER SET LATIN NOT CASESPECIFIC, source_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_type_cd integer, target_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_type_cd integer, source_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_total_count varchar(50), target_total_count varchar(50), script_text VARCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC, user_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+
+CREATE MULTISET TABLE TAFD.TRN_TST_Distinct_Value_Count_Rslt ,NO FALLBACK , NO BEFORE JOURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) CHARACTER SET LATIN NOT CASESPECIFIC, source_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_type_cd integer, target_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_type_cd integer, source_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_column_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_column_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_distinct_count varchar(50), target_distinct_count varchar(50), script_text VARCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC, user_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+
+CREATE MULTISET TABLE TAFD.TRN_TST_Sum_Avg_Recon_Rslt ,NO FALLBACK , NO BEFORE JOURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) CHARACTER SET LATIN NOT CASESPECIFIC, source_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_type_cd integer, target_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_type_cd integer, source_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_column_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_column_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_sum varchar(150), target_sum varchar(150), source_avg varchar(150), target_avg varchar(150), script_text VARCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC, user_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+
+CREATE MULTISET TABLE TAFD.TRN_TST_Min_Max_Recon_Rslt ,NO FALLBACK , NO BEFORE JOURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) CHARACTER SET LATIN NOT CASESPECIFIC, source_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_type_cd integer, target_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_type_cd integer, source_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_column_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_column_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_max varchar(150), target_max varchar(150), source_min varchar(150), target_min varchar(150), script_text VARCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC, user_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+
+CREATE MULTISET TABLE TAFD.TRN_TST_Null_Value_Count_Rslt ,NO FALLBACK , NO BEFORE JOURNAL, NO AFTER JOURNAL, CHECKSUM = DEFAULT, DEFAULT MERGEBLOCKRATIO (test_id integer NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1 INCREMENT BY 1 MINVALUE 1 NO CYCLE), stream_id integer, sub_stream_id integer, test_cycle_id varchar(20), test_type_cd integer, test_status VARCHAR(10) CHARACTER SET LATIN NOT CASESPECIFIC, source_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_type_cd integer, target_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_type_cd integer, source_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_path VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_column_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, target_column_name VARCHAR(250) CHARACTER SET LATIN NOT CASESPECIFIC, source_null_count varchar(50), target_null_count varchar(50), script_text VARCHAR(1500) CHARACTER SET LATIN NOT CASESPECIFIC, business_date VARCHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC, user_id integer, env_id varchar(20), execution_timestamp TIMESTAMP(6), PRIMARY KEY (test_id));
+
+drop table TAFD.Source_Type_Lookup;
+
+drop table TAFD.Target_Type_Lookup;
+
+drop table TAFD.Env_Lookup;
+
+drop table TAFD.File_Delimeter_Lookup;
+
+drop table TAFD.Stream_Lookup;
+
+drop table TAFD.Sub_Stream_Lookup;
+
+drop table TAFD.Module_Lookup;
+
+create multiset table TAFD.Inp_Config_Param (test_cycle_id varchar(20), insertion_timestamp TIMESTAMP(6), config_parameter varchar(50), parameter_value varchar(50), category varchar(50));
+
+create multiset table TAFD.Inp_Row_Count_And_Metrics (test_cycle_id varchar(20), insertion_timestamp TIMESTAMP(6), stream_id varchar(20), sub_stream_id varchar(20), env_id varchar(20), source_path varchar(20), source_name varchar(20), source_type_cd integer, target_path varchar(20), target_name varchar(20), target_type_cd integer, file_delimeter_type_cd varchar(4), row_count varchar(1), distinct_count varchar(1), sum_avg varchar(1), min_max varchar(1), null_count varchar(1), mapping_specification varchar(4));
+
+create multiset table TAFD.Inp_Column_Mapping (test_cycle_id varchar(20), insertion_timestamp TIMESTAMP(6), source_path varchar(50), source_name varchar(50), target_path varchar(50), target_name varchar(50), source_column varchar(50), target_column varchar(50), is_numeric varchar(2), auto_detect_datatype varchar(2));
+
+create multiset table TAFD.Inp_Release_Package_Info (test_cycle_id varchar(20), insertion_timestamp TIMESTAMP(6), env_id varchar(20), db_name varchar(50), object_name varchar(50), object_type varchar(10), status varchar(10), process_name varchar(50), process_type varchar(10));
+
+create multiset table TAFD.Inp_Dup_Verification (test_cycle_id varchar(20), insertion_timestamp TIMESTAMP(6), stream_id varchar(20), sub_stream_id varchar(20), env_id varchar(20), db_name varchar(50), table_name varchar(50), pk_column_name varchar(50));
+
+create multiset table TAFD.Inp_Table_And_Dup_Info (test_cycle_id varchar(20), insertion_timestamp TIMESTAMP(6), db_name varchar(50), table_name varchar(50), dup_type varchar(4), open_records varchar(2), end_date_col varchar(30));
+
+create multiset table TAFD.Inp_Ri_Verification (test_cycle_id varchar(20), insertion_timestamp TIMESTAMP(6), stream_id varchar(20), sub_stream_id varchar(20), env_id varchar(20), parent_db_name varchar(50), parent_table_name varchar(50), pk_columns varchar(50), child_db_name varchar(50), child_table_name varchar(50), fk_columns varchar(50));
+
+create multiset table TAFD.Inp_Hh_Verification (test_cycle_id varchar(20), insertion_timestamp TIMESTAMP(6), stream_id varchar(20), sub_stream_id varchar(20), env_id varchar(20), db_name varchar(50), table_name varchar(50), column_name varchar(50), pk_column varchar(1), start_ts_column varchar(1), end_ts_column varchar(1));
+
+create multiset table TAFD.Inp_Hh_Test_Detail (test_cycle_id varchar(20), insertion_timestamp TIMESTAMP(6), db_name varchar(50), table_name varchar(50), reverse varchar(1), overlap varchar(1), gap varchar(1), test_detail varchar(10));
+
+create multiset table TAFD.Inp_Exception_List (test_cycle_id varchar(20), insertion_timestamp TIMESTAMP(6), exception_column varchar(50));
+
+create multiset table TAFD.Inp_Minus_Test (test_cycle_id varchar(20), insertion_timestamp TIMESTAMP(6), stream_id varchar(20), sub_stream_id varchar(20), env_id varchar(20), db_name_a varchar(50), table_name_a varchar(50), db_name_b varchar(50), table_name_b varchar(50), a_minus_b varchar(1), b_minus_a varchar(1), exclude_technical_columns varchar(1), mapping_specification varchar(4));
+
+create multiset table TAFD.Inp_Minus_Column_Mapping (test_cycle_id varchar(20), insertion_timestamp TIMESTAMP(6), db_name_a varchar(50), table_name_a varchar(50), db_name_b varchar(50), table_name_b varchar(50), column_name_a varchar(50), column_name_b varchar(50));
+
+create multiset table TAFD.Inp_Surrogate_Key_Test (test_cycle_id varchar(20), insertion_timestamp TIMESTAMP(6), stream_id varchar(20), sub_stream_id varchar(20), env_id varchar(20), src_db_name varchar(50), src_tbl_name varchar(50), surr_key_db_name varchar(50), surr_key_tbl_name varchar(50), natural_key_cols varchar(100), surr_key_col varchar(50), concat_natural_key_col varchar(50), natural_key_function varchar(1000));
+
+create multiset table TAFD.Inp_Test_Script_Execution (test_cycle_id varchar(20), insertion_timestamp TIMESTAMP(6), stream_id varchar(20), sub_stream_id varchar(20), env_id varchar(20), test_script_path varchar(100), test_resultset_db varchar(50), test_resultset_tbl varchar(50), int_layer_db varchar(50), int_layer_tbl varchar(50), int_layer_script varchar(100));
+
+insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'Hostname', '153.65.144.102', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'Database', 'TAFD', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'Username', 'dbc', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'Password', 'dbc', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'Modules To Run', '6.0', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'Business Date', '42705.0', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'Server Access Username', '', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'Server Access Password', '', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'Release Package ID', 'A', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'Reset Test Cycle', 'F', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'All Teradata Hosts', '153.65.144.102', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'All Teradata Users', 'dbc', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'All Teradata Passwords', 'dbc', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'High Date', '9999-12-31 23:59:59', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'script_execution_server_hostname', '', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'script_execution_server_username', '', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'script_execution_server_password', '', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'BTEQ File Extensions', 'bt,bteq,btq', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'FASTLOAD File Extensions', 'fld,fl', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'MULTILOAD File Extensions', 'mld,ml', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'TPT File Extensions', 'tpt', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'execute_remotely', 'T', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'Create Result Tables', 'T', '');insert into TAFD.Inp_Config_Param values ('1.172', '2017.11.24.14.38.53', 'Continue Execution If Objects Do Not Exist', 'T', '');
+
+insert into TAFD.Inp_Row_Count_And_Metrics values ('1.172', '2017.11.24.14.38.53', '1', '1', 'TAFPipe1', 'TAFD', 'AllContractorEmployees', 1, 'TAFD', 'AllContractorEmployees', 1, 'NA', 'Y', 'Y', 'Y', 'Y', 'Y', 'NA');insert into TAFD.Inp_Row_Count_And_Metrics values ('1.172', '2017.11.24.14.38.53', '1', '1', 'TAFPipe1', 'TAFD', 'ContractorEmployee', 1, 'TAFD', 'ContractorEmployee', 1, 'NA', 'Y', 'Y', 'Y', 'Y', 'Y', 'NA');insert into TAFD.Inp_Row_Count_And_Metrics values ('1.172', '2017.11.24.14.38.53', '1', '1', 'TAFPipe2', 'TAFD', 'checking_acct', 1, 'TAFD', 'checking_acct', 1, 'NA', 'Y', 'Y', 'Y', 'Y', 'Y', 'NA');
+
+insert into TAFD.Inp_Release_Package_Info values ('1.172', '2017.11.24.14.38.53', 'TST01', 'tafd_db', 'try_tbl', 'Table', 'New', '', 'TPT');
+
+insert into TAFD.Inp_Dup_Verification values ('1.172', '2017.11.24.14.38.53', '1', '1', 'TST03', 'tafd_db', 'try_tbl', 'col1');
+
+insert into TAFD.Inp_Table_And_Dup_Info values ('1.172', '2017.11.24.14.38.53', 'tafd_db', 'try_tbl', 'ALL', 'Y', 'col4');
+
+insert into TAFD.Inp_Ri_Verification values ('1.172', '2017.11.24.14.38.53', '1', '1', 'TST01', 'tafd_db', 'test_tbl', 'stream_id', 'tafd_db', 'test_tbl', 'stream_id');
+
+insert into TAFD.Inp_Hh_Verification values ('1.172', '2017.11.24.14.38.53', '1', '1', 'TAFPipe1', 'TAFD_DB', 'test_tbl2', 'stream_id', 'Y', '', '');insert into TAFD.Inp_Hh_Verification values ('1.172', '2017.11.24.14.38.53', '1', '1', 'TAFPipe2', 'TAFD_DB', 'test_tbl3', 'process_exec_start_time', '', 'Y', '');insert into TAFD.Inp_Hh_Verification values ('1.172', '2017.11.24.14.38.53', '1', '1', 'TAFPipe3', 'TAFD_DB', 'test_tbl4', 'process_exec_end_time', '', '', 'Y');
+
+
+
+
+
+insert into TAFD.Inp_Column_Mapping values ('1.172', '2017.11.24.14.38.53', 'C:\Users\kt186036\Desktop\File Comparison', 'employee_comma - Copy (1).txt', 'C:\Users\kt186036\Desktop\File Comparison', 'employee_comma - Copy (2).txt', 'Flag', 'Flag', 'Y', 'N');
+
+insert into TAFD.Inp_Minus_Test values ('1.172', '2017.11.24.14.38.53', '1', '1', 'TAFPipe1', 'TAFD', 'Employee', 'TAFD', 'PermEmployee', 'Y', 'Y', 'Y', 'NA');
+
+insert into TAFD.Inp_Surrogate_Key_Test values ('1.172', '2017.11.24.14.38.53', '1', '1', 'TST01', 'tafd_db', 'src_tbl', 'tafd_db', 'surr_key_tbl', 'src_key1,src_key2', 'surr_key', 'select tafd_db.src_tbl.src_key1 || '_' || tafd_db.src_tbl.src_key2', 'concat_src_key');insert into TAFD.Inp_Test_Script_Execution values ('1.172', '2017.11.24.14.38.53', '1', '1', 'TST01', 'C:/Users/kt186036/Desktop/TAS/CORE_CHART_OF_ACCOUNTS_DATA_LOAD_SCRIPT.btq', 'TAS_DB', 'TMP_CORE_COMPANY', 'TAS_DB', 'CORE_COMPANY', '');
+
+
+
+
+create set table TAFD.Source_Type_Lookup (source_type_cd integer, source_type_name varchar(30), source_type_desc varchar(40));
+
+create set table TAFD.Target_Type_Lookup (target_type_cd integer, target_type_name varchar(30), target_type_desc varchar(40));
+
+create set table TAFD.Env_Lookup (environment_id varchar(20), environment_name varchar(30), environment_desc varchar(40));
+
+create set table TAFD.File_Delimeter_Lookup (file_delimeter_type_cd integer, file_delimeter varchar(30), file_delimeter_desc varchar(40));
+
+create set table TAFD.Stream_Lookup (stream_id integer, stream_name varchar(30), stream_desc varchar(40));
+
+create set table TAFD.Sub_Stream_Lookup (sub_stream_id integer, sub_stream_name varchar(30), sub_stream_desc varchar(40));
+
+create set table TAFD.Module_Lookup (module_code integer, module_name varchar(80));
+
+insert into TAFD.Source_Type_Lookup values (1.0, 'Teradata', 'Teradata database object');
+insert into TAFD.Source_Type_Lookup values (2.0, 'File', 'Data File');
+insert into TAFD.Source_Type_Lookup values (3.0, 'Oracle', 'Oracle database object');
+insert into TAFD.Source_Type_Lookup values (4.0, 'Hadoop', 'Hadoop object');
+insert into TAFD.Source_Type_Lookup values (5.0, 'Other', 'Other');
+insert into TAFD.Target_Type_Lookup values (1.0, 'Teradata', 'Teradata database object');
+insert into TAFD.Target_Type_Lookup values (2.0, 'Oracle', 'Oracle database object');
+insert into TAFD.Target_Type_Lookup values (3.0, 'Hadoop', 'Hadoop object');
+insert into TAFD.Target_Type_Lookup values (4.0, 'Other', 'Other');
+insert into TAFD.Env_Lookup values ('TST01', 'Integration Test Environment', 'Test Environment for Integration Test Executions');
+insert into TAFD.Env_Lookup values ('TST02', 'System Test Environment', 'Test Environment for System Test Executions');
+insert into TAFD.Env_Lookup values ('TST03', 'Backup Test Environment', 'Test Environment for Data Backup');
+insert into TAFD.Env_Lookup values ('UAT01', 'User Acceptance Test Environment', 'Test Environment for User Acceptance Test Executions');
+insert into TAFD.File_Delimeter_Lookup values (1.0, ',', 'Comma');
+insert into TAFD.File_Delimeter_Lookup values (2.0, ':', 'Colon');
+insert into TAFD.File_Delimeter_Lookup values (3.0, ';', 'Semicolon');
+insert into TAFD.File_Delimeter_Lookup values (4.0, '|', 'Pipe');
+insert into TAFD.File_Delimeter_Lookup values (5.0, '                     ', 'Tab');
+insert into TAFD.Stream_Lookup values (1.0, 'Customer', 'Customer business area');
+insert into TAFD.Stream_Lookup values (2.0, 'Revenue', 'Revenue business area');
+insert into TAFD.Stream_Lookup values (3.0, 'Usage', 'Usage business area');
+insert into TAFD.Stream_Lookup values (4.0, 'Data_Staging', 'General Data Staging from Source');
+insert into TAFD.Sub_Stream_Lookup values (1.0, 'Customer_Data_Staging', 'Customer business area data staging');
+insert into TAFD.Sub_Stream_Lookup values (2.0, 'Customer_DI', 'Customer business area DI');
+insert into TAFD.Sub_Stream_Lookup values (3.0, 'Customer_BI', 'Customer business area BI');
+insert into TAFD.Module_Lookup values (3.0, 'Execution Status Check');
+insert into TAFD.Module_Lookup values (4.0, '0 row count identification on DB object level');
+insert into TAFD.Module_Lookup values (5.0, '0 row count identification at loading script/job level');
+insert into TAFD.Module_Lookup values (6.0, 'Row Count Verification Module');
+insert into TAFD.Module_Lookup values (7.0, 'Distinct Value Count Module');
+insert into TAFD.Module_Lookup values (8.0, 'Sum/Avg Reconciliation Module');
+insert into TAFD.Module_Lookup values (9.0, 'Min/Max Reconciliation Module');
+insert into TAFD.Module_Lookup values (10.0, 'RI verification Module');
+insert into TAFD.Module_Lookup values (11.0, 'Null Value identification Module');
+insert into TAFD.Module_Lookup values (12.0, 'PK and Full Row Duplicate identification Module');
+insert into TAFD.Module_Lookup values (13.0, 'History Verification');
+insert into TAFD.Module_Lookup values (14.0, 'Minus Test');
+insert into TAFD.Module_Lookup values (15.0, 'Surrogate Key Verification');
+
+.LOGOFF;
+.quit
