@@ -14,6 +14,8 @@ node {
 			echo " OUTPUTTING FILE CONTENTS"
 			echo "${env.WORKSPACE}"
 			echo version
+			echo version.size
+			echo version.length
 			throw err
 			
 			}
