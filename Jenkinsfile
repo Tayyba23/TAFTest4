@@ -13,9 +13,10 @@ node {
 			def version = readFile "${env.WORKSPACE}/SQLSource/error_logfile.txt"
 			echo " OUTPUTTING FILE CONTENTS"
 			echo "${env.WORKSPACE}"
-			echo version
-			echo version.size
+					echo version.size
 			echo version.length
+			echo version
+	
 			
 			throw err
 			
