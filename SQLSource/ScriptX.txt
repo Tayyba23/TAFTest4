@@ -46,6 +46,26 @@ create table ContractorEmployee
   Employee_status varchar(1),
   IUD_Flag VARCHAR(50)
  );
-
+CREATE  TABLE TAFD.credit_tran   (
+      Tran_Id INTEGER NOT NULL,
+      Cust_Id INTEGER NOT NULL,
+      Acct_Nbr CHAR(16) CHARACTER SET LATIN NOT CASESPECIFIC,
+      Channel_Nbr INTEGER,
+      Merchant_SIC INTEGER,
+      Session_Id INTEGER,
+      Tran_Duration SMALLINT,
+      Tran_Date DATE FORMAT 'MM/DD/YYYY',
+      Tran_Time CHAR(6) CHARACTER SET LATIN NOT CASESPECIFIC,
+      Tran_Amt DECIMAL(9,2),
+      Principal_Amt DECIMAL(9,2),
+      Interest_Amt DECIMAL(9,2),
+      New_Balance DECIMAL(9,2),
+      Merchant_Name CHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC,
+      Merchant_City CHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC,
+      Merchant_State CHAR(2) CHARACTER SET LATIN NOT CASESPECIFIC,
+      Merchant_Postal_Code CHAR(5) CHARACTER SET LATIN NOT CASESPECIFIC,
+      Tran_Code CHAR(2) CHARACTER SET LATIN NOT CASESPECIFIC,
+      Channel CHAR(1) CHARACTER SET LATIN NOT CASESPECIFIC
+      );
 .LOGOFF; 
 
