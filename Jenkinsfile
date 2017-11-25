@@ -20,7 +20,7 @@ node {
 			echo version
 	
 			
-			throw err
+
 			
 			}
 			catch(err){
