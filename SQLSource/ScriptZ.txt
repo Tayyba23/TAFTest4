@@ -42,14 +42,14 @@ insert into TAFD.credit_acct select cust_id,acct_nbr,1000,0,'Y',acct_start_date,
 insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,700,3860,23,'09/11/1995',55751,172.61,172.61,0,952.57,'Mary Market       ','St Louis            ','MO','63181','CG','E'from TAFD.accts where TAFD.accts.cust_id=1;
 insert into TAFD.credit_tran select 122,cust_id,acct_nbr,0,1100,42178,29,'12/01/1995',201339,24.76,24.76,0,4711.29,'Linda Lighting    ','Los Angeles         ','CA','90189','CG','E'from TAFD.accts where TAFD.accts.cust_id=2;
 insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,200,4635,38,'04/19/1995',103018,94.85,94.85,0,1779.98,'Buy The Book        ','Houston             ','TX','77059','CG','E'from TAFD.accts where TAFD.accts.cust_id=3;
-insert into TAFD.credit_tran select 122,cust_id,acct_nbr,20,?,65135,54,'11/24/1995',82433,0,0,0,1185.21,null,null,null,null,'IQ','B'from TAFD.accts where TAFD.accts.cust_id=4;
-insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,?,7467,0,'08/03/1995',?,196.61,190.47,6.14,747.58,null,null,null,null,'PM','M'from TAFD.accts where TAFD.accts.cust_id=5;
+insert into TAFD.credit_tran select 122,cust_id,acct_nbr,20,null,65135,54,'11/24/1995',82433,0,0,0,1185.21,null,null,null,null,'IQ','B'from TAFD.accts where TAFD.accts.cust_id=4;
+insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,null,7467,0,'08/03/1995',null,196.61,190.47,6.14,747.58,null,null,null,null,'PM','M'from TAFD.accts where TAFD.accts.cust_id=5;
 insert into TAFD.credit_tran select 122,cust_id,acct_nbr,0,1000,112786,20,'10/13/1995',154412,273.51,273.51,0,3952.4,'Gilligan Island   ','New York City       ','NY','10039','CG','E'from TAFD.accts where TAFD.accts.cust_id=6;
-insert into TAFD.credit_tran select 61,cust_id,acct_nbr,1,?,10394,36,'10/24/1995',203306,0,0,0,0,null,null,null,null,'IQ','V'from TAFD.accts where TAFD.accts.cust_id=7;
+insert into TAFD.credit_tran select 61,cust_id,acct_nbr,1,null,10394,36,'10/24/1995',203306,0,0,0,0,null,null,null,null,'IQ','V'from TAFD.accts where TAFD.accts.cust_id=7;
 insert into TAFD.credit_tran select 101,cust_id,acct_nbr,0,1000,23368,36,'12/09/1995',22143,51.64,51.64,0,1155.22,'Tim Trout Fishing ','Cleveland           ','OH','44173','CG','E'from TAFD.accts where TAFD.accts.cust_id=8;
 insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,100,12114,41,'09/28/1995',125734,19.44,19.44,0,762.17,'Zorba Hideaway    ','New York City       ','NY','10021','CG','E'from TAFD.accts where TAFD.accts.cust_id=9;
 insert into TAFD.credit_tran select 101,cust_id,acct_nbr,0,700,42268,29,'10/08/1995',33654,144.29,144.29,0,2024.19,'Soupys Supermarket ','Los Angeles         ','CA','90058','CG','E'from TAFD.accts where TAFD.accts.cust_id=10;
-insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,?,13024,0,'11/02/1995',?,813.47,802.61,10.86,197.39,null,null,null,null,'PM','M'from TAFD.accts where TAFD.accts.cust_id=11;
+insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,null,13024,0,'11/02/1995',null,813.47,802.61,10.86,197.39,null,null,null,null,'PM','M'from TAFD.accts where TAFD.accts.cust_id=11;
 insert into TAFD.credit_tran select 101,cust_id,acct_nbr,0,1100,65157,38,'10/25/1995',1626,174.74,174.74,0,1099.56,'Lindas Lighting    ','Los Angeles         ','CA','90055','CG','E'from TAFD.accts where TAFD.accts.cust_id=12;
 insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,1200,18633,43,'11/04/1995',141008,243.49,243.49,0,1172.69,'Limitless Clothing  ','New York City       ','NY','10105','CG','E'from TAFD.accts where TAFD.accts.cust_id=13;
 insert into TAFD.credit_tran select 101,cust_id,acct_nbr,0,500,73116,41,'12/13/1995',112535,245.58,245.58,0,2431.23,'Wing-and-Prayer Air ','Louisville          ','KY','40223','CG','E'from TAFD.accts where TAFD.accts.cust_id=14;
@@ -63,18 +63,18 @@ insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,300,26623,34,'12/16/19
 insert into TAFD.credit_tran select 101,cust_id,acct_nbr,0,500,159288,32,'11/30/1995',144531,43.75,43.75,0,2247.09,'Puddle Jump Airline ','Los Angeles         ','CA','90091','CG','E'from TAFD.accts where TAFD.accts.cust_id=22;
 insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,1100,27942,21,'12/22/1995',235636,77.1,77.1,0,807.37,'Brad Bricks       ','Seattle             ','WA','98101','CG','E'from TAFD.accts where TAFD.accts.cust_id=23;
 insert into TAFD.credit_tran select 141,cust_id,acct_nbr,0,800,42242,32,'12/30/1995',102509,327.18,327.18,0,5359.08,'Flea Trap Motel     ','Los Angeles         ','CA','90059','CG','E'from TAFD.accts where TAFD.accts.cust_id=24;
-insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,?,33364,0,'12/01/1995',?,544.81,534.31,10.5,465.69,null,null,null,null,'PM','M'from TAFD.accts where TAFD.accts.cust_id=25;
+insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,null,33364,0,'12/01/1995',null,544.81,534.31,10.5,465.69,null,null,null,null,'PM','M'from TAFD.accts where TAFD.accts.cust_id=25;
 insert into TAFD.credit_tran select 141,cust_id,acct_nbr,0,1200,112703,21,'11/29/1995',111737,323.3,323.3,0,5708.38,'April-May Dept Store','New York City       ','NY','10177','CG','E'from TAFD.accts where TAFD.accts.cust_id=26;
-insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,?,34706,0,'12/06/1995',?,453.87,452.16,1.71,181.99,null,null,null,null,'PM','M'from TAFD.accts where TAFD.accts.cust_id=27;
+insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,null,34706,0,'12/06/1995',null,453.87,452.16,1.71,181.99,null,null,null,null,'PM','M'from TAFD.accts where TAFD.accts.cust_id=27;
 insert into TAFD.credit_tran select 120,cust_id,acct_nbr,0,700,42175,18,'11/29/1995',1549,86.98,86.98,0,4466.93,'Soupy Supermarket ','Los Angeles         ','CA','90096','CG','E'from TAFD.accts where TAFD.accts.cust_id=28;
 insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,300,36223,29,'08/19/1995',152939,21.15,21.15,0,509.9,'Rent-a-Wreck        ','New York City       ','NY','10069','CG','E'from TAFD.accts where TAFD.accts.cust_id=29;
 insert into TAFD.credit_tran select 120,cust_id,acct_nbr,0,500,65117,35,'11/20/1995',64347,99.71,99.71,0,1096.46,'Wing-and-Prayer Air ','Los Angeles         ','CA','90121','CG','E'from TAFD.accts where TAFD.accts.cust_id=30;
-insert into TAFD.credit_tran select 61,cust_id,acct_nbr,139,?,56264,18,'10/10/1995',142220,0,0,0,55.21,null,null,null,null,'IQ','K'from TAFD.accts where TAFD.accts.cust_id=31;
+insert into TAFD.credit_tran select 61,cust_id,acct_nbr,139,null,56264,18,'10/10/1995',142220,0,0,0,55.21,null,null,null,null,'IQ','K'from TAFD.accts where TAFD.accts.cust_id=31;
 insert into TAFD.credit_tran select 120,cust_id,acct_nbr,0,300,112758,15,'10/08/1995',13445,301.35,301.35,0,3498.89,'Acme Car Rental     ','New York City       ','NY','10121','CG','E'from TAFD.accts where TAFD.accts.cust_id=32;
 insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,200,57351,27,'12/16/1995',183527,200.35,200.35,0,616.83,'Carries Cards      ','New Orleans         ','LA','70173','CG','E'from TAFD.accts where TAFD.accts.cust_id=33;
-insert into TAFD.credit_tran select 120,cust_id,acct_nbr,1,?,162963,39,'11/29/1995',23244,0,0,0,3082.42,null,null,null,null,'IQ','C'from TAFD.accts where TAFD.accts.cust_id=34;
+insert into TAFD.credit_tran select 120,cust_id,acct_nbr,1,null,162963,39,'11/29/1995',23244,0,0,0,3082.42,null,null,null,null,'IQ','C'from TAFD.accts where TAFD.accts.cust_id=34;
 insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,100,63135,15,'10/17/1995',2424,254.88,254.88,0,797.15,'Lisas Pasta Bar    ','Chicago             ','IL','60605','CG','E'from TAFD.accts where TAFD.accts.cust_id=35;
-insert into TAFD.credit_tran select 99,cust_id,acct_nbr,0,?,23453,0,'12/02/1995',?,405.92,403.64,2.28,958.48,null,null,null,null,'PM','M'from TAFD.accts where TAFD.accts.cust_id=36;
+insert into TAFD.credit_tran select 99,cust_id,acct_nbr,0,null,23453,0,'12/02/1995',null,405.92,403.64,2.28,958.48,null,null,null,null,'PM','M'from TAFD.accts where TAFD.accts.cust_id=36;
 insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,200,65056,32,'08/01/1995',130834,71.99,71.99,0,1477,'Jerry Jewelry     ','Los Angeles         ','CA','90025','CG','E'from TAFD.accts where TAFD.accts.cust_id=37;
 insert into TAFD.credit_tran select 99,cust_id,acct_nbr,0,100,42250,17,'10/06/1995',183653,220.91,220.91,0,1812.56,'Flying Burrito Res. ','Los Angeles         ','CA','90106','CG','E'from TAFD.accts where TAFD.accts.cust_id=38;
 insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,1300,69084,19,'11/23/1995',150839,74.22,74.22,0,1675.51,'Terrys Trucks      ','Chicago             ','IL','60651','CG','E'from TAFD.accts where TAFD.accts.cust_id=39;
@@ -82,7 +82,7 @@ insert into TAFD.credit_tran select 99,cust_id,acct_nbr,0,400,65180,26,'10/16/19
 insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,1200,70865,42,'12/08/1995',154237,63.98,63.98,0,639.06,'April-May Dept Store','Philadelphia        ','PA','19137','CG','E'from TAFD.accts where TAFD.accts.cust_id=41;
 insert into TAFD.credit_tran select 99,cust_id,acct_nbr,0,100,73142,31,'12/09/1995',143213,249.49,249.49,0,2144.12,'Haveacow Steakhouse ','Louisville          ','KY','40273','CG','E'from TAFD.accts where TAFD.accts.cust_id=42;
 insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,200,73136,34,'08/08/1995',201100,73.1,73.1,0,2226.1,'Dilberts Dept Store','Louisville          ','KY','40223','CG','E'from TAFD.accts where TAFD.accts.cust_id=43;
-insert into TAFD.credit_tran select 99,cust_id,acct_nbr,0,?,87474,0,'12/04/1995',?,485.16,473.94,11.22,2994.41,null,null,null,null,'PM','M'from TAFD.accts where TAFD.accts.cust_id=44;
+insert into TAFD.credit_tran select 99,cust_id,acct_nbr,0,null,87474,0,'12/04/1995',null,485.16,473.94,11.22,2994.41,null,null,null,null,'PM','M'from TAFD.accts where TAFD.accts.cust_id=44;
 insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,200,79552,23,'08/09/1995',224539,430.12,430.12,0,2115.74,'Jerry Jewelry     ','Baltimore           ','MD','21286','CG','E'from TAFD.accts where TAFD.accts.cust_id=45;
 insert into TAFD.credit_tran select 99,cust_id,acct_nbr,0,200,104447,20,'11/24/1995',115136,295.09,295.09,0,1673.24,'Carries Cards      ','Los Angeles         ','CA','90123','CG','E'from TAFD.accts where TAFD.accts.cust_id=46;
 insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,1300,81639,34,'11/11/1995',202255,98.11,98.11,0,98.11,'Terrys Trucks      ','Nashville           ','TN','37204','CG','E'from TAFD.accts where TAFD.accts.cust_id=47;
@@ -93,5 +93,5 @@ insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,100,85074,31,'11/12/19
 insert into TAFD.credit_tran select 17,cust_id,acct_nbr,0,100,796,39,'05/26/1995',112301,14.56,14.56,0,374.68,'Sushi To Go         ','Denver              ','CO','80262','CG','E'from TAFD.accts where TAFD.accts.cust_id=52;
 insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,1000,86234,44,'11/01/1995',130104,47.43,47.43,0,730.64,'Tims Trout Fishing ','Phoenix             ','AZ','85046','CG','E'from TAFD.accts where TAFD.accts.cust_id=53;
 insert into TAFD.credit_tran select 17,cust_id,acct_nbr,0,1100,1245,35,'04/24/1995',155507,65.03,65.03,0,895.8,'Lindas Lighting    ','New York City       ','NY','10211','CG','E'from TAFD.accts where TAFD.accts.cust_id=54;
-	
+
 .LOGOFF; 
