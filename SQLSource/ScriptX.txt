@@ -20,8 +20,8 @@ CREATE TABLE credit_acct
       credit_limit INTEGER,
       credit_rating SMALLINT,
       account_active CHAR(1) CHARACTER SET LATIN NOT CASESPECIFIC,
-      acct_start_date DATE FORMAT 'YYYYMMDD',
-      acct_end_date DATE FORMAT 'YYYYMMDD',
+      acct_start_date DATE FORMAT 'MM/DD/YYYY',
+      acct_end_date DATE FORMAT 'MM/DD/YYYY',
       starting_balance DECIMAL(9,2) FORMAT '--Z(6)9.99',
       ending_balance DECIMAL(9,2) FORMAT '--Z(6)9.99');
 
