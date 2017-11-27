@@ -14,33 +14,47 @@ node {
 			echo "${BUILD_NUMBER}"
 			echo "${env.WORKSPACE}"
 			
-			bat "cd SQLSource \n ExecScripts.bat"
 			
 			def logX = readFile "${env.WORKSPACE}/SQLSource/errorX_logfile.txt"
-			def logY = readFile "${env.WORKSPACE}/SQLSource/errorY_logfile.txt"
-			def logZ = readFile "${env.WORKSPACE}/SQLSource/errorZ_logfile.txt"
 			
 			if(logX == '')
 			echo " No Error log generated for script X"
 			else
 			throw err
 			
+			}
+			catch(err){
+			            echo "Error exists in  Git X Script, Marking build as unstable"
+						currentBuild.result = "UNSTABLE"
+			}
+        try{
+			def logY = readFile "${env.WORKSPACE}/SQLSource/errorY_logfile.txt"
+			
 			if (logY == '')
 			echo "No Error Log generated for Script Y"
 			else
 			throw err
+			}catch(err){
+			echo "Error exists in Git Y Script, Marking build as unstable"
+						currentBuild.result = "UNSTABLE"
+			}
 			
+			try{
+			def logZ = readFile "${env.WORKSPACE}/SQLSource/errorZ_logfile.txt"
 			if(logZ == '')
 			echo "No Error Log generated for Z"
 			else 
 			throw err
 			
-			}
-			catch(err){
-			            echo "Error exists in Git Scripts, Marking build as unstable"
+			
+			}catch(err){
+			
+				echo "Error exists in Git Y Script, Marking build as unstable"
 						currentBuild.result = "UNSTABLE"
 			}
-        }
+				
+		
+		}
        stage ('Tests') {
             parallel 'static': {
                 bat "echo 'shell scripts to run static tests...'"
