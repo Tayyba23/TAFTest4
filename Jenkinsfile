@@ -10,15 +10,27 @@ node {
         stage ('Build') {
 		try {
             bat "cd SQLSource \n ExecScripts.bat"
-			def version = readFile "${env.WORKSPACE}/SQLSource/error_logfile.txt"
-			echo " OUTPUTTING FILE CONTENTS"
+			def logX = readFile "${env.WORKSPACE}/SQLSource/errorX_logfile.txt"
+			def logY = readFile "${env.WORKSPACE}/SQLSource/errorY_logfile.txt"
+			def logZ = readFile "${env.WORKSPACE}/SQLSource/errorZ_logfile.txt"
+			
 			echo "${env.WORKSPACE}"
 			
-			if(version == '')
-			echo " No Error log generated for script"
+			if(logX == '')
+			echo " No Error log generated for script X"
 			else
 			throw err
-					
+			
+			if (logY == '')
+			echo "No Error Log generated for Script Y"
+			else
+			throw err
+			
+			if(logZ == '')
+			echo "No Error Log generated for Z"
+			else 
+			throw err
+			
 			}
 			catch(err){
 			            echo "Error exists in Git Scripts, Marking build as unstable"
