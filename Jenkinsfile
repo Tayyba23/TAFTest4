@@ -9,8 +9,6 @@ node {
         }
         stage ('Build') {
 		try {
-			bat "cd C:\\Program Files (x86)\\Jenkins\\jobs\\Pipeline1\\builds\\${BUILD_NUMBER}"
-			def output = readFile "26.log"
 			echo "${BUILD_NUMBER}"
 			echo "${env.WORKSPACE}"
 			
@@ -46,6 +44,10 @@ node {
             },
             'unit': {
                 bat "java -jar target\\tafd.jar"
+				bat "cd C:\\Program Files (x86)\\Jenkins\\jobs\\Pipeline1\\builds\\${BUILD_NUMBER}"
+				def output = readFile "26.log"
+				echo output
+			
             },
             'integration': {
                 bat "echo 'shell scripts to run integration tests...'"
