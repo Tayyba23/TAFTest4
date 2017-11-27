@@ -9,13 +9,12 @@ node {
         }
         stage ('Build') {
 		try {
-			def path ="C:\\Program Files (x86)\\Jenkins\\jobs\\Pipeline1\\builds\\${BUILD_NUMBER}"
-			bat "cd path"
-			echo path
+			bat "cd C:\\Program Files (x86)\\Jenkins\\jobs\\Pipeline1\\builds\\${BUILD_NUMBER}"
+			def output = readFile "26.log"
 			echo "${BUILD_NUMBER}"
 			echo "${env.WORKSPACE}"
 			
-			 bat "cd SQLSource \n ExecScripts.bat"
+			bat "cd SQLSource \n ExecScripts.bat"
 			def logX = readFile "${env.WORKSPACE}/SQLSource/errorX_logfile.txt"
 			def logY = readFile "${env.WORKSPACE}/SQLSource/errorY_logfile.txt"
 			def logZ = readFile "${env.WORKSPACE}/SQLSource/errorZ_logfile.txt"
