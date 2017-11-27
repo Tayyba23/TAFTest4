@@ -9,13 +9,16 @@ node {
         }
         stage ('Build') {
 		try {
-            bat "cd SQLSource \n ExecScripts.bat"
+			def path ="C:\Program Files (x86)\Jenkins\jobs\Pipeline1\builds\${BUILD_NUMBER}"
+			bat "cd path"
+			echo path
+			echo "${BUILD_NUMBER}"
+			echo "${env.WORKSPACE}"
+			
+			 bat "cd SQLSource \n ExecScripts.bat"
 			def logX = readFile "${env.WORKSPACE}/SQLSource/errorX_logfile.txt"
 			def logY = readFile "${env.WORKSPACE}/SQLSource/errorY_logfile.txt"
 			def logZ = readFile "${env.WORKSPACE}/SQLSource/errorZ_logfile.txt"
-			
-			echo "${BUILD_NUMBER}"
-			echo "${env.WORKSPACE}"
 			
 			if(logX == '')
 			echo " No Error log generated for script X"
