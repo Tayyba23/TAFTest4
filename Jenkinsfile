@@ -44,9 +44,8 @@ node {
             },
             'unit': {
                 bat "java -jar target\\tafd.jar"
-				bat "cd C:\\Program Files (x86)\\Jenkins\\jobs\\Pipeline1\\builds\\${BUILD_NUMBER}"
-				def output = readFile "C:\\Program Files (x86)\\Jenkins\\jobs\\Pipeline1\\builds\\${BUILD_NUMBER}\\26.log"
-				echo output
+				def out= "$JENKINS_HOME/jobs/$JOB_NAME/builds/${BUILD_NUMBER}/26.log"
+				echo out
 			
             },
             'integration': {
