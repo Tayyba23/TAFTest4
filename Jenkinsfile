@@ -61,12 +61,12 @@ node {
             },
             'unit': {
                 bat "java -jar target\\tafd.jar"
-				def out= "$JENKINS_HOME/jobs/$JOB_NAME/builds/${BUILD_NUMBER}"
+				def out= "$JENKINS_HOME/jobs/$JOB_NAME/builds/${BUIL_NUMBER}"
 				bat "cd $JENKINS_HOME/jobs/$JOB_NAME/builds/${BUILD_NUMBER} \n dir /b /a-d > tmp.txt"
 				def files = readFile "$JENKINS_HOME/jobs/$JOB_NAME/builds/${BUILD_NUMBER}/tmp.txt"
 				echo files
 				def temp="tmp.txt";
-				bat "java -jar LogParser.jar out temp"
+				bat "java -jar LogParser.jar "$JENKINS_HOME/jobs/$JOB_NAME/builds/${BUIL_NUMBER}/" temp.txt"
 			
             },
             'integration': {
