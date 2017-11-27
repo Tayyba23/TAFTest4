@@ -51,7 +51,7 @@ node {
 				bat "cd $JENKINS_HOME/jobs/$JOB_NAME/builds/${BUILD_NUMBER} \n dir /b /a-d > tmp.txt"
 				def files = readFile "$JENKINS_HOME/jobs/$JOB_NAME/builds/${BUILD_NUMBER}/tmp.txt"
 				echo files
-				bat "java -jar test.jar $JENKINS_HOME/jobs/$JOB_NAME/builds/${BUILD_NUMBER}/ tmp.txt"
+				bat "java -jar LogParser.jar $JENKINS_HOME/jobs/$JOB_NAME/builds/${BUILD_NUMBER}/ tmp.txt"
 			
             },
             'integration': {
