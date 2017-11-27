@@ -9,9 +9,11 @@ node {
         }
         stage ('Build') {
 		try {
+
+
 			echo "${BUILD_NUMBER}"
 			echo "${env.WORKSPACE}"
-			
+			bat "cd SQLSource \n ExecScripts.bat"
 			
 			def logX = readFile "${env.WORKSPACE}/SQLSource/errorX_logfile.txt"
 			def logY = readFile "${env.WORKSPACE}/SQLSource/errorY_logfile.txt"
@@ -44,7 +46,7 @@ node {
             },
             'unit': {
                 bat "java -jar target\\tafd.jar"
-				def out= readFile "$JENKINS_HOME/jobs/$JOB_NAME/builds/${BUILD_NUMBER}/26.log"
+				def out= "$JENKINS_HOME/jobs/$JOB_NAME/builds/${BUILD_NUMBER}"
 				echo out
 				
 			

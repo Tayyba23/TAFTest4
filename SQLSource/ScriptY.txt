@@ -34,6 +34,8 @@ insert into TAFD.customer values (28,1100,51,4,2,'M','M');
 insert into TAFD.customer values (29,700,35,12,1,'F','U');
 insert into TAFD.customer values (30,900,12,5,5,'M','M');
 
+insert into TAFD.customer values (500,900,12,5,5,'M','M');
+
 
 insert into TAFD.customer values (41,1200,23,1,2,'F','M');
 insert into TAFD.customer values (42,1800,32,3,3,'M','U');
