@@ -9,7 +9,7 @@ node {
         }
         stage ('Build') {
 		try {
-			def path ="C:\Program Files (x86)\Jenkins\jobs\Pipeline1\builds\${BUILD_NUMBER}"
+			def path ="C:\\Program Files (x86)\\Jenkins\\jobs\\Pipeline1\\builds\\${BUILD_NUMBER}"
 			bat "cd path"
 			echo path
 			echo "${BUILD_NUMBER}"
