@@ -1,6 +1,8 @@
 .LOGON 153.65.144.102/dbc,dbc; 
    DATABASE TAFD;
 	
+
+
 insert into TAFD.credit_acct select cust_id,acct_nbr,1000,0,'Y',acct_start_date,acct_end_date,705.21,1000 from TAFD.accts where cust_id =1;
 insert into TAFD.credit_acct select cust_id,acct_nbr,1000,0,'Y',acct_start_date,acct_end_date,705.21,1000from TAFD.accts where cust_id=2;
 insert into TAFD.credit_acct select cust_id,acct_nbr,1000,0,'Y',acct_start_date,acct_end_date,0,1000from TAFD.accts where cust_id=1;
@@ -93,5 +95,6 @@ insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,100,85074,31,'11/12/19
 insert into TAFD.credit_tran select 17,cust_id,acct_nbr,0,100,796,39,'05/26/1995',112301,14.56,14.56,0,374.68,'Sushi To Go         ','Denver              ','CO','80262','CG','E'from TAFD.accts where TAFD.accts.cust_id=52;
 insert into TAFD.credit_tran select 61,cust_id,acct_nbr,0,1000,86234,44,'11/01/1995',130104,47.43,47.43,0,730.64,'Tims Trout Fishing ','Phoenix             ','AZ','85046','CG','E'from TAFD.accts where TAFD.accts.cust_id=53;
 insert into TAFD.credit_tran select 17,cust_id,acct_nbr,0,1100,1245,35,'04/24/1995',155507,65.03,65.03,0,895.8,'Lindas Lighting    ','New York City       ','NY','10211','CG','E'from TAFD.accts where TAFD.accts.cust_id=54;
+
 
 .LOGOFF; 

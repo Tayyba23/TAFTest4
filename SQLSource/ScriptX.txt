@@ -1,7 +1,47 @@
 
 .LOGON 153.65.144.102/dbc,dbc; 
    DATABASE TAFD;
- CREATE TABLE checking_acct (
+
+ CREATE TABLE customer 
+     (
+      cust_id INTEGER NOT NULL,
+      income INTEGER,	
+      age SMALLINT,
+      years_with_bank SMALLINT,
+      nbr_children SMALLINT,
+      gender CHAR(1) ,
+      marital_status CHAR(1));
+	  
+	 CREATE  TABLE TAFD.accts 
+     (
+      cust_id INTEGER NOT NULL,
+      acct_type CHAR(2) CHARACTER SET LATIN NOT CASESPECIFIC NOT NULL,
+      acct_nbr CHAR(16) CHARACTER SET LATIN NOT CASESPECIFIC NOT NULL,
+      acct_start_date DATE FORMAT 'MM/DD/YYYY' NOT NULL,
+      acct_end_date DATE FORMAT 'MM/DD/YYYY') ;
+          	  
+CREATE  TABLE TAFD.credit_tran   (
+      Tran_Id INTEGER NOT NULL,
+      Cust_Id INTEGER NOT NULL,
+      Acct_Nbr CHAR(16) CHARACTER SET LATIN NOT CASESPECIFIC,
+      Channel_Nbr INTEGER,
+      Merchant_SIC INTEGER,
+      Session_Id INTEGER,
+      Tran_Duration SMALLINT,
+      Tran_Date DATE FORMAT 'MM/DD/YYYY',
+      Tran_Time CHAR(6) CHARACTER SET LATIN NOT CASESPECIFIC,
+      Tran_Amt DECIMAL(9,2),
+      Principal_Amt DECIMAL(9,2),
+      Interest_Amt DECIMAL(9,2),
+      New_Balance DECIMAL(9,2),
+      Merchant_Name CHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC,
+      Merchant_City CHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC,
+      Merchant_State CHAR(2) CHARACTER SET LATIN NOT CASESPECIFIC,
+      Merchant_Postal_Code CHAR(5) CHARACTER SET LATIN NOT CASESPECIFIC,
+      Tran_Code CHAR(2) CHARACTER SET LATIN NOT CASESPECIFIC,
+      Channel CHAR(1) CHARACTER SET LATIN NOT CASESPECIFIC
+      );
+	   CREATE TABLE checking_acct (
       cust_id INTEGER NOT NULL,
       acct_nbr CHAR(16) ,
       minimum_balance INTEGER,
@@ -25,47 +65,5 @@ CREATE TABLE credit_acct
       starting_balance DECIMAL(9,2) FORMAT '--Z(6)9.99',
       ending_balance DECIMAL(9,2) FORMAT '--Z(6)9.99');
 
-create table ContractorEmployee
- (
-  Employee_ID VARCHAR(50), 
-  First_Name VARCHAR(50), 
-  Last_Name VARCHAR(50), 
-  Joining_date VARCHAR(50), 
-  row_time_stamp VARCHAR(50),
-  Employee_status varchar(1),
-  IUD_Flag VARCHAR(50)
- );
-
- create table AllContractorEmployee
- (
-  Employee_ID VARCHAR(50), 
-  First_Name VARCHAR(50), 
-  Last_Name VARCHAR(50), 
-  Joining_date VARCHAR(50), 
-  row_time_stamp VARCHAR(50),
-  Employee_status varchar(1),
-  IUD_Flag VARCHAR(50)
- );
-CREATE  TABLE TAFD.credit_tran   (
-      Tran_Id INTEGER NOT NULL,
-      Cust_Id INTEGER NOT NULL,
-      Acct_Nbr CHAR(16) CHARACTER SET LATIN NOT CASESPECIFIC,
-      Channel_Nbr INTEGER,
-      Merchant_SIC INTEGER,
-      Session_Id INTEGER,
-      Tran_Duration SMALLINT,
-      Tran_Date DATE FORMAT 'MM/DD/YYYY',
-      Tran_Time CHAR(6) CHARACTER SET LATIN NOT CASESPECIFIC,
-      Tran_Amt DECIMAL(9,2),
-      Principal_Amt DECIMAL(9,2),
-      Interest_Amt DECIMAL(9,2),
-      New_Balance DECIMAL(9,2),
-      Merchant_Name CHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC,
-      Merchant_City CHAR(20) CHARACTER SET LATIN NOT CASESPECIFIC,
-      Merchant_State CHAR(2) CHARACTER SET LATIN NOT CASESPECIFIC,
-      Merchant_Postal_Code CHAR(5) CHARACTER SET LATIN NOT CASESPECIFIC,
-      Tran_Code CHAR(2) CHARACTER SET LATIN NOT CASESPECIFIC,
-      Channel CHAR(1) CHARACTER SET LATIN NOT CASESPECIFIC
-      );
 .LOGOFF; 
 

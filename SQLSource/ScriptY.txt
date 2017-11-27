@@ -1,67 +1,129 @@
 .LOGON 153.65.144.102/dbc,dbc; 
    DATABASE TAFD;
-insert into TAFD.AllContractorEmployee values (100,'Beenish','Zahoor','14-12-2016','14-12-2016 04:33:10','C',0);
-insert into TAFD.AllContractorEmployee values (101,'Hira','Tehreem','13-11-2016','13-11-2017 04:33:20','C',0);
-insert into TAFD.AllContractorEmployee values (102,'Myra','Syed','18-02-2017','15-12-2016 04:33:30','C',0);
-insert into TAFD.AllContractorEmployee values (103,'Kanwal','Tariq','18-09-2016','11-12-2016 04:33:10','C',0);
-insert into TAFD.AllContractorEmployee values (104,'Kamran','Sattar','01-03-2017','12-12-2016 04:33:20','C',0);
-insert into TAFD.AllContractorEmployee values (105,'Ahmed','Hassan','18-09-2016','13-12-2016 04:33:30','C',0);
-insert into TAFD.AllContractorEmployee values (106,'Tayyba','Fatima','29-04-2016','21-12-2016 04:33:15','C',0);
-insert into TAFD.AllContractorEmployee values (107,'Fahad','Malik','29-04-2010','30-12-2016 04:33:25','C',0);
-insert into TAFD.AllContractorEmployee values (108,'Tayyab','Mehmood','29-04-2016','11-12-2016 04:33:35','C',0);
-insert into TAFD.AllContractorEmployee values (109,'Harisa','Urooj','12-07-2016','18-12-2016 04:33:40','C',0);
-insert into TAFD.AllContractorEmployee values (200,'ABC','XYS','12-07-2016','18-12-2016 04:33:40','C',0);
+   insert into TAFD.customer values (1,1200,23,1,2,'F','M');
+insert into TAFD.customer values (2,1800,32,3,3,'M','U');
+insert into TAFD.customer values (3,2400,31,5,0,'M','M');
+insert into TAFD.customer values (4,900,46,6,2,'F','U');
+insert into TAFD.customer values (5,1500,33,3,5,'F','M');
+insert into TAFD.customer values (6,1600,23,1,4,'M','U');
+insert into TAFD.customer values (7,1200,34,2,4,'F','U');
+insert into TAFD.customer values (8,1100,51,4,2,'M','M');
+insert into TAFD.customer values (9,700,35,12,1,'F','U');
+insert into TAFD.customer values (10,900,12,5,5,'M','M');
+
+insert into TAFD.customer values (11,1200,23,1,2,'F','M');
+insert into TAFD.customer values (12,1800,32,3,3,'M','U');
+insert into TAFD.customer values (13,2400,31,5,0,'M','M');
+insert into TAFD.customer values (14,900,46,6,2,'F','U');
+insert into TAFD.customer values (15,1500,33,3,5,'F','M');
+insert into TAFD.customer values (16,1600,23,1,4,'M','U');
+insert into TAFD.customer values (17,1200,34,2,4,'F','U');
+insert into TAFD.customer values (18,1100,51,4,2,'M','M');
+insert into TAFD.customer values (19,700,35,12,1,'F','U');
+insert into TAFD.customer values (20,900,12,5,5,'M','M');
 
 
-insert into TAFD.AllContractorEmployee values (200,'Beenish','Islam','14-12-2016','14-12-2016 04:33:10','C',0);
-insert into TAFD.AllContractorEmployee values (201,'Mehreen','Tehreem','13-11-2016','13-11-2017 04:33:20','C',0);
-insert into TAFD.AllContractorEmployee values (202,'Tayyba','Zahid','18-02-2017','15-12-2016 04:33:30','C',0);
-insert into TAFD.AllContractorEmployee values (203,'Kanwal','Islam','18-09-2016','11-12-2016 04:33:10','C',0);
-insert into TAFD.AllContractorEmployee values (204,'Kamran','Ahmed','01-03-2017','12-12-2016 04:33:20','C',0);
-insert into TAFD.AllContractorEmployee values (205,'Bilal','Anjum','18-09-2016','13-12-2016 04:33:30','C',0);
-insert into TAFD.AllContractorEmployee values (206,'Bilal','Khan','29-04-2016','21-12-2016 04:33:15','C',0);
-insert into TAFD.AllContractorEmployee values (207,'Fahad','Mir','29-04-2010','30-12-2016 04:33:25','C',0);
-insert into TAFD.AllContractorEmployee values (208,'Tayyab','ahmed','29-04-2016','11-12-2016 04:33:35','C',0);
-insert into TAFD.AllContractorEmployee values (209,'Malik','Urooj','12-07-2016','18-12-2016 04:33:40','C',0);
-insert into TAFD.AllContractorEmployee values (300,'ABC','XYZ','12-07-2016','18-12-2016 04:33:40','C',0);
+insert into TAFD.customer values (21,1200,23,1,2,'F','M');
+insert into TAFD.customer values (22,1800,32,3,3,'M','U');
+insert into TAFD.customer values (23,2400,31,5,0,'M','M');
+insert into TAFD.customer values (24,900,46,6,2,'F','U');
+insert into TAFD.customer values (25,1500,33,3,5,'F','M');
+insert into TAFD.customer values (26,1600,23,1,4,'M','U');
+insert into TAFD.customer values (27,1200,34,2,4,'F','U');
+insert into TAFD.customer values (28,1100,51,4,2,'M','M');
+insert into TAFD.customer values (29,700,35,12,1,'F','U');
+insert into TAFD.customer values (30,900,12,5,5,'M','M');
 
 
-insert into TAFD.AllContractorEmployee values (210,'Beenish','Zahoor','14-12-2016','14-12-2016 04:33:10','C',0);
-insert into TAFD.AllContractorEmployee values (211,'Hira','Tehreem','13-11-2016','13-11-2017 04:33:20','C',0);
-insert into TAFD.AllContractorEmployee values (212,'Myra','Syed','18-02-2017','15-12-2016 04:33:30','C',0);
-insert into TAFD.AllContractorEmployee values (213,'Kanwal','Tariq','18-09-2016','11-12-2016 04:33:10','C',0);
-insert into TAFD.AllContractorEmployee values (214,'Kamran','Sattar','01-03-2017','12-12-2016 04:33:20','C',0);
-insert into TAFD.AllContractorEmployee values (215,'Ahmed','Hassan','18-09-2016','13-12-2016 04:33:30','C',0);
-insert into TAFD.AllContractorEmployee values (216,'Tayyba','Fatima','29-04-2016','21-12-2016 04:33:15','C',0);
-insert into TAFD.AllContractorEmployee values (217,'Fahad','Malik','29-04-2010','30-12-2016 04:33:25','C',0);
-insert into TAFD.AllContractorEmployee values (218,'Tayyab','Mehmood','29-04-2016','11-12-2016 04:33:35','C',0);
-insert into TAFD.AllContractorEmployee values (219,'Harisa','Urooj','12-07-2016','18-12-2016 04:33:40','C',0);
-insert into TAFD.AllContractorEmployee values (310,'ABC','XYS','12-07-2016','18-12-2016 04:33:40','C',0);
+insert into TAFD.customer values (41,1200,23,1,2,'F','M');
+insert into TAFD.customer values (42,1800,32,3,3,'M','U');
+insert into TAFD.customer values (43,2400,31,5,0,'M','M');
+insert into TAFD.customer values (44,900,46,6,2,'F','U');
+insert into TAFD.customer values (45,1500,33,3,5,'F','M');
+insert into TAFD.customer values (46,1600,23,1,4,'M','U');
+insert into TAFD.customer values (47,1200,34,2,4,'F','U');
+insert into TAFD.customer values (48,1100,51,4,2,'M','M');
+insert into TAFD.customer values (49,700,35,12,1,'F','U');
+insert into TAFD.customer values (50,900,12,5,5,'M','M');
 
-insert into TAFD.AllContractorEmployee values (400,'Javaria','Fatima','14-12-2016','14-12-2016 04:33:10','C',0);
-insert into TAFD.AllContractorEmployee values (401,'Sidra','Zahid','13-11-2016','13-11-2017 04:33:20','C',0);
-insert into TAFD.AllContractorEmployee values (412,'Sajeel','Zahid','18-02-2017','15-12-2016 04:33:30','C',0);
-insert into TAFD.AllContractorEmployee values (413,'Adeel','Tariq','18-09-2016','11-12-2016 04:33:10','C',0);
-insert into TAFD.AllContractorEmployee values (404,'Adeel','Sattar','01-03-2017','12-12-2016 04:33:20','C',0);
-insert into TAFD.AllContractorEmployee values (405,'Zahid','Hassan','18-09-2016','13-12-2016 04:33:30','C',0);
-insert into TAFD.AllContractorEmployee values (406,'Tayyba','Khan','29-04-2016','21-12-2016 04:33:15','C',0);
-insert into TAFD.AllContractorEmployee values (407,'Ayesha','Safeer','29-04-2010','30-12-2016 04:33:25','C',0);
-insert into TAFD.AllContractorEmployee values (408,'Mehnoor','Fatima','29-04-2016','11-12-2016 04:33:35','C',0);
-insert into TAFD.AllContractorEmployee values (409,'Mehreen','Saeed','12-07-2016','18-12-2016 04:33:40','C',0);
-insert into TAFD.AllContractorEmployee values (400,'Iqra','Aziz','12-07-2016','18-12-2016 04:33:40','C',0);
-
-insert into TAFD.AllContractorEmployee values (418,'Tayyab','Aslam','29-04-2016','11-12-2016 04:33:35','C',0);
-insert into TAFD.AllContractorEmployee values (419,'Harisa','Saad','12-07-2016','18-12-2016 04:33:40','C',0);
-insert into TAFD.AllContractorEmployee values (410,'ABC','LMN','12-07-2016','18-12-2016 04:33:40','C',0);
-insert into TAFD.AllContractorEmployee values (416,'Tayyba','Jahangir','29-04-2016','21-12-2016 04:33:15','C',0);
-insert into TAFD.AllContractorEmployee values (427,'Ayesha','Sana','29-04-2010','30-12-2016 04:33:25','C',0);
-insert into TAFD.AllContractorEmployee values (428,'Mehnoor','Zareen','29-04-2016','11-12-2016 04:33:35','C',0);
-insert into TAFD.AllContractorEmployee values (429,'Mehreen','Islam','12-07-2016','18-12-2016 04:33:40','C',0);
-insert into TAFD.AllContractorEmployee values (430,'Iqra','Rastee','12-07-2016','18-12-2016 04:33:40','C',0);
+insert into TAFD.customer values (31,1200,23,1,2,'F','M');
+insert into TAFD.customer values (32,1800,32,3,3,'M','U');
+insert into TAFD.customer values (33,2400,31,5,0,'M','M');
+insert into TAFD.customer values (34,900,46,6,2,'F','U');
+insert into TAFD.customer values (35,1500,33,3,5,'F','M');
+insert into TAFD.customer values (36,1600,23,1,4,'M','U');
+insert into TAFD.customer values (37,1200,34,2,4,'F','U');
+insert into TAFD.customer values (38,1100,51,4,2,'M','M');
+insert into TAFD.customer values (39,700,35,12,1,'F','U');
+insert into TAFD.customer values (40,900,12,5,5,'M','M');
 
 
-insert into TAFD.ContractorEmployee select * from TAFD.AllContractorEmployee where first_name = 'Rabia'; 
+insert into TAFD.customer values (41,990,46,6,2,'F','U');
+insert into TAFD.customer values (42,1510,33,3,5,'F','M');
+insert into TAFD.customer values (43,1640,23,1,4,'M','U');
+insert into TAFD.customer values (44,1260,34,2,4,'F','U');
+insert into TAFD.customer values (45,1140,51,4,2,'M','M');
+insert into TAFD.customer values (46,709,35,12,1,'F','U');
+insert into TAFD.customer values (47,910,12,5,5,'M','M');
 
+ insert into TAFD.accts select cust_id, 'CK','13625512','09/18/1995','09/18/1995' from TAFD.customer where cust_id =1;
+ insert into TAFD.accts select cust_id, 'CC','4561140000000000','01/11/1991',null from TAFD.customer where cust_id =2;
+ insert into TAFD.accts select cust_id, 'SV','13625493','03/22/1993',null from TAFD.customer where cust_id =3;
+ insert into TAFD.accts select cust_id, 'SV','13624863','07/13/1989',null from TAFD.customer where cust_id =4;
+ insert into TAFD.accts select cust_id, 'CC','4561140000000000','08/16/1990','09/18/1995' from TAFD.customer where cust_id =5;
+ insert into TAFD.accts select cust_id, 'CK','13624862','08/24/1994',null from TAFD.customer where cust_id =6;
+ insert into TAFD.accts select cust_id, 'CK','13625002','12/04/1995',null from TAFD.customer where cust_id =7;
+ insert into TAFD.accts select cust_id, 'SV','13624893','09/13/1993',null from TAFD.customer where cust_id =8;
+ insert into TAFD.accts select cust_id, 'CK','13625032','09/01/1994','09/18/1995' from TAFD.customer where cust_id =1362489;
+ insert into TAFD.accts select cust_id, 'CC','4561140000000000','07/31/1994',null from TAFD.customer where cust_id =1362503;
+ insert into TAFD.accts select cust_id, 'CK','13624892','10/19/1993',null from TAFD.customer where cust_id =9;
+ insert into TAFD.accts select cust_id, 'SV','13626053','03/26/1994',null from TAFD.customer where cust_id =1362489;
+ insert into TAFD.accts select cust_id, 'SV','13624983','09/15/1995',null from TAFD.customer where cust_id =1362605;
+ insert into TAFD.accts select cust_id, 'CC','4561140000000000','08/14/1995',null from TAFD.customer where cust_id =10;
+ insert into TAFD.accts select cust_id, 'SV','13626503','04/05/1995','09/18/2002' from TAFD.customer where cust_id =13;
+ insert into TAFD.accts select cust_id, 'SV','13625003','12/08/1995','09/18/2007' from TAFD.customer where cust_id =14;
+ insert into TAFD.accts select cust_id, 'CK','13624982','02/12/1995','09/18/1997' from TAFD.customer where cust_id =11;
+ insert into TAFD.accts select cust_id, 'CK','13626722','12/18/1995',null from TAFD.customer where cust_id =1362498;
+ insert into TAFD.accts select cust_id, 'CK','13626052','05/21/1994','09/18/2005' from TAFD.customer where cust_id =12;
+ 
+ 
+ 
+ insert into TAFD.accts select cust_id, 'CK','13625512','09/18/1995','09/18/2005' from TAFD.customer where cust_id =15;
+ insert into TAFD.accts select cust_id, 'CC','4561140000000000','01/12/1992',null from TAFD.customer where cust_id =16;
+ insert into TAFD.accts select cust_id, 'SV','13625493','03/22/1991',null from TAFD.customer where cust_id =17;
+ insert into TAFD.accts select cust_id, 'SV','13624863','07/13/1983',null from TAFD.customer where cust_id =18;
+ insert into TAFD.accts select cust_id, 'CC','4561140000000000','08/16/1970','09/18/1995' from TAFD.customer where cust_id =19;
+ insert into TAFD.accts select cust_id, 'CK','13624862','08/24/1991',null from TAFD.customer where cust_id =20;
+ insert into TAFD.accts select cust_id, 'CK','13625002','12/04/1990',null from TAFD.customer where cust_id =21;
+ insert into TAFD.accts select cust_id, 'SV','13624893','09/13/1993',null from TAFD.customer where cust_id =22;
+ insert into TAFD.accts select cust_id, 'CK','13625032','09/01/1994','09/18/1995' from TAFD.customer where cust_id =23;
+ insert into TAFD.accts select cust_id, 'CC','4561140000000000','07/31/1994',null from TAFD.customer where cust_id =24;
+ insert into TAFD.accts select cust_id, 'CK','13624892','10/19/1993',null from TAFD.customer where cust_id =25;
+ insert into TAFD.accts select cust_id, 'SV','13626053','03/26/1994',null from TAFD.customer where cust_id =26;
+ insert into TAFD.accts select cust_id, 'SV','13624983','09/15/1995',null from TAFD.customer where cust_id =27;
+ insert into TAFD.accts select cust_id, 'CC','4561140000000000','08/14/1995',null from TAFD.customer where cust_id =28;
+ insert into TAFD.accts select cust_id, 'SV','13626503','04/05/1995','09/18/2002' from TAFD.customer where cust_id =29;
+ insert into TAFD.accts select cust_id, 'SV','13625003','12/08/1995','09/18/2007' from TAFD.customer where cust_id =30;
+ insert into TAFD.accts select cust_id, 'CK','13624982','02/12/1995','09/18/1997' from TAFD.customer where cust_id =31;
+ insert into TAFD.accts select cust_id, 'CK','13626722','12/18/1995',null from TAFD.customer where cust_id =32;
+ insert into TAFD.accts select cust_id, 'CK','13626052','05/21/1994','09/18/2005' from TAFD.customer where cust_id =33;
+ 
+ 
+  insert into TAFD.accts select cust_id, 'SV','13624863','07/13/1983',null from TAFD.customer where cust_id =34;
+ insert into TAFD.accts select cust_id, 'CC','4561140000000000','08/16/1970','09/18/1995' from TAFD.customer where cust_id =35;
+ insert into TAFD.accts select cust_id, 'CK','13624862','08/24/1991',null from TAFD.customer where cust_id =36;
+ insert into TAFD.accts select cust_id, 'CK','13625002','12/04/1990',null from TAFD.customer where cust_id =37;
+ insert into TAFD.accts select cust_id, 'SV','13624893','09/13/1993',null from TAFD.customer where cust_id =38;
+ insert into TAFD.accts select cust_id, 'CK','13625032','09/01/1994','09/18/1995' from TAFD.customer where cust_id =39;
+ insert into TAFD.accts select cust_id, 'CC','4561140000000000','07/31/1994',null from TAFD.customer where cust_id =40;
+ 
+ 
+ insert into TAFD.accts select cust_id, 'CK','13624862','08/24/1991',null from TAFD.customer where cust_id =41;
+ insert into TAFD.accts select cust_id, 'CK','13625002','12/04/1990',null from TAFD.customer where cust_id =42;
+ insert into TAFD.accts select cust_id, 'SV','13624893','09/13/1993',null from TAFD.customer where cust_id =43;
+ insert into TAFD.accts select cust_id, 'CK','13625032','09/01/1994','09/18/1995' from TAFD.customer where cust_id =44;
+ insert into TAFD.accts select cust_id, 'CC','4561140000000000','07/31/1994',null from TAFD.customer where cust_id =45;
+ 
 insert into TAFD.checking_acct select cust_id,acct_nbr, 200,0.15,'Y',acct_start_date,acct_end_date,256.11,7.84 from TAFD.accts where cust_id=1;
 insert into TAFD.checking_acct select cust_id,acct_nbr, 100,0.15,'Y',acct_start_date,acct_end_date,882.15,1470.14 from TAFD.accts where cust_id=2;
 insert into TAFD.checking_acct select cust_id,acct_nbr, 100,0.15,'Y',acct_start_date,acct_end_date,233.77,172.66 from TAFD.accts where cust_id=3;
