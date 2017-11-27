@@ -15,16 +15,13 @@ node {
 			echo "${env.WORKSPACE}"
 			
 			if(version == '')
-			echo "log file empty"
+			echo " No Error log generated for script"
 			else
-			echo version
-	
-			
-
-			
+			throw err
+					
 			}
 			catch(err){
-			            echo "Optional tests failed... don't propagate failure"
+			            echo "Error exists in Git Scripts, Marking build as unstable"
 						currentBuild.result = "UNSTABLE"
 			}
         }
