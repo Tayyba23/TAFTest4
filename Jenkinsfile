@@ -14,6 +14,7 @@ node {
 			def logY = readFile "${env.WORKSPACE}/SQLSource/errorY_logfile.txt"
 			def logZ = readFile "${env.WORKSPACE}/SQLSource/errorZ_logfile.txt"
 			
+			echo "${BUILD_NUMBER}"
 			echo "${env.WORKSPACE}"
 			
 			if(logX == '')
