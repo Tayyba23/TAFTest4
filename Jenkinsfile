@@ -44,8 +44,9 @@ node {
             },
             'unit': {
                 bat "java -jar target\\tafd.jar"
-				def out= "$JENKINS_HOME/jobs/$JOB_NAME/builds/${BUILD_NUMBER}/26.log"
+				def out= readFile "$JENKINS_HOME/jobs/$JOB_NAME/builds/${BUILD_NUMBER}/26.log"
 				echo out
+				
 			
             },
             'integration': {
