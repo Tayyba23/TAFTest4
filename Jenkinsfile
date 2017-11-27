@@ -12,7 +12,7 @@ node {
 			echo "${BUILD_NUMBER}"
 			echo "${env.WORKSPACE}"
 			
-			bat "cd SQLSource \n ExecScripts.bat"
+			
 			def logX = readFile "${env.WORKSPACE}/SQLSource/errorX_logfile.txt"
 			def logY = readFile "${env.WORKSPACE}/SQLSource/errorY_logfile.txt"
 			def logZ = readFile "${env.WORKSPACE}/SQLSource/errorZ_logfile.txt"
