@@ -13,6 +13,7 @@ node {
 
 			echo "${BUILD_NUMBER}"
 			echo "${env.WORKSPACE}"
+			
 			bat "cd SQLSource \n ExecScripts.bat"
 			
 			def logX = readFile "${env.WORKSPACE}/SQLSource/errorX_logfile.txt"
@@ -47,7 +48,9 @@ node {
             'unit': {
                 bat "java -jar target\\tafd.jar"
 				def out= "$JENKINS_HOME/jobs/$JOB_NAME/builds/${BUILD_NUMBER}"
-				echo out
+				bat "cd $JENKINS_HOME/jobs/$JOB_NAME/builds/${BUILD_NUMBER} \n dir /b /a-d > tmp.txt"
+				def files = readFile "files.txt"
+				echo files
 				
 			
             },
