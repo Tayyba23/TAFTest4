@@ -8,7 +8,7 @@ node {
         }
         stage ('Build') {
 		try {
-		
+			bat "cd SQLSource \n ExecScripts.bat"
 			def logX = readFile "${env.WORKSPACE}/SQLSource/errorX_logfile.txt"
 			
 			if(logX == '')
