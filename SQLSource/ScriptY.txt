@@ -59,6 +59,7 @@ insert into TAFD.customer values (37,1200,34,2,4,'F','U');
 insert into TAFD.customer values (38,1100,51,4,2,'M','M');
 insert into TAFD.customer values (39,700,35,12,1,'F','U');
 insert into TAFD.customer values (40,900,12,5,5,'M','M');
+insert into TAFD.customer values (94,900,12,5,5,'M','M');
 
 
 insert into TAFD.customer values (41,990,46,6,2,'F','U');
@@ -88,6 +89,8 @@ insert into TAFD.customer values (47,910,12,5,5,'M','M');
  insert into TAFD.accts select cust_id, 'CK','13624982','02/12/1995','09/18/1997' from TAFD.customer where cust_id =11;
  insert into TAFD.accts select cust_id, 'CK','13626722','12/18/1995',null from TAFD.customer where cust_id =1362498;
  insert into TAFD.accts select cust_id, 'CK','13626052','05/21/1994','09/18/2005' from TAFD.customer where cust_id =12;
+ 
+  insert into TAFD.accts select cust_id, 'CK','13626052','05/21/1994','09/18/2005' from TAFD.customer where cust_id =52;
  
  
  
