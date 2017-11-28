@@ -4,8 +4,7 @@ node {
 
     try {
         stage ('Clone') {
-            checkout scm
-            
+            checkout scm         
         }
         stage ('Build') {
 		try {
