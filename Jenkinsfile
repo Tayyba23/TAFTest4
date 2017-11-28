@@ -60,6 +60,7 @@ node {
 				def temp="tmp.txt";
 				bat "java -jar LogParser.jar $out temp.txt"
 				status = readFile "$JENKINS_HOME/jobs/$JOB_NAME/builds/${BUILD_NUMBER}/result.txt"
+				echo status
 				if(status.contains('Unsuccessful')){
 					echo status
 					throw err 
@@ -77,6 +78,6 @@ node {
         }
     } catch (err) {
         currentBuild.result = 'FAILED'
-        throw err
+       
     }
 }
