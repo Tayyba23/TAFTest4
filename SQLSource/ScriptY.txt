@@ -12,6 +12,7 @@ insert into TAFD.customer values (9,700,35,12,1,'F','U');
 insert into TAFD.customer values (10,900,12,5,5,'M','M');
 
 insert into TAFD.customer values (11,1200,23,1,2,'F','M');
+insert into TAFD.customer values (99,1200,23,1,2,'F','M');
 insert into TAFD.customer values (12,1800,32,3,3,'M','U');
 insert into TAFD.customer values (13,2400,31,5,0,'M','M');
 insert into TAFD.customer values (14,900,46,6,2,'F','U');
