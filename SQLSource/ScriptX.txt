@@ -1,7 +1,16 @@
 
 .LOGON 153.65.144.102/dbc,dbc; 
    DATABASE TAFD;
+	SELECT 1
+FROM DBC.TABLES
+WHERE Databasename = 'TAFD'
+AND Tablename = 'customer';
+.if activitycount = 0 then .goto no_tab;
+.if errorcode <> 0 then .goto unsuccessful_end;
 
+DROP TABLE TAFD.customer;
+.if errorcode <> 0 then .goto unsuccessful_end;
+.label no_tab;
  CREATE TABLE customer 
      (
       cust_id INTEGER NOT NULL,
@@ -11,15 +20,38 @@
       nbr_children SMALLINT,
       gender CHAR(1) ,
       marital_status CHAR(1));
-	  
-	 CREATE  TABLE TAFD.accts 
+
+   DATABASE TAFD;
+	SELECT 1
+FROM DBC.TABLES
+WHERE Databasename = 'TAFD'
+AND Tablename = 'accts';
+.if activitycount = 0 then .goto no_tab;
+.if errorcode <> 0 then .goto unsuccessful_end;
+
+DROP TABLE TAFD.accts;
+.if errorcode <> 0 then .goto unsuccessful_end;
+.label no_tab;	  
+ CREATE  TABLE TAFD.accts 
      (
       cust_id INTEGER NOT NULL,
       acct_type CHAR(2) CHARACTER SET LATIN NOT CASESPECIFIC NOT NULL,
       acct_nbr CHAR(16) CHARACTER SET LATIN NOT CASESPECIFIC NOT NULL,
       acct_start_date DATE FORMAT 'MM/DD/YYYY' NOT NULL,
       acct_end_date DATE FORMAT 'MM/DD/YYYY') ;
-          	  
+  
+
+   DATABASE TAFD;
+	SELECT 1
+FROM DBC.TABLES
+WHERE Databasename = 'TAFD'
+AND Tablename = 'credit_tran';
+.if activitycount = 0 then .goto no_tab;
+.if errorcode <> 0 then .goto unsuccessful_end;
+
+DROP TABLE TAFD.credit_tran;
+.if errorcode <> 0 then .goto unsuccessful_end;
+.label no_tab;	  
 CREATE  TABLE TAFD.credit_tran   (
       Tran_Id INTEGER NOT NULL,
       Cust_Id INTEGER NOT NULL,
@@ -41,6 +73,19 @@ CREATE  TABLE TAFD.credit_tran   (
       Tran_Code CHAR(2) CHARACTER SET LATIN NOT CASESPECIFIC,
       Channel CHAR(1) CHARACTER SET LATIN NOT CASESPECIFIC
       );
+	  
+	   DATABASE TAFD;
+	SELECT 1
+FROM DBC.TABLES
+WHERE Databasename = 'TAFD'
+AND Tablename = 'checking_acct';
+.if activitycount = 0 then .goto no_tab;
+.if errorcode <> 0 then .goto unsuccessful_end;
+
+DROP TABLE TAFD.checking_acct;
+.if errorcode <> 0 then .goto unsuccessful_end;
+.label no_tab;	
+	  
 	   CREATE TABLE checking_acct (
       cust_id INTEGER NOT NULL,
       acct_nbr CHAR(16) ,
@@ -52,6 +97,19 @@ CREATE  TABLE TAFD.credit_tran   (
       starting_balance DECIMAL(9,2) ,
       ending_balance DECIMAL(9,2)
 );
+
+	   DATABASE TAFD;
+	SELECT 1
+FROM DBC.TABLES
+WHERE Databasename = 'TAFD'
+AND Tablename = 'credit_acct';
+.if activitycount = 0 then .goto no_tab;
+.if errorcode <> 0 then .goto unsuccessful_end;
+
+DROP TABLE TAFD.credit_acct;
+.if errorcode <> 0 then .goto unsuccessful_end;
+.label no_tab;	
+
 
 CREATE TABLE credit_acct 
      (

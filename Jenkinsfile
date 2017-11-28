@@ -9,12 +9,7 @@ node {
         }
         stage ('Build') {
 		try {
-
-
-			echo "${BUILD_NUMBER}"
-			echo "${env.WORKSPACE}"
-			
-			
+		
 			def logX = readFile "${env.WORKSPACE}/SQLSource/errorX_logfile.txt"
 			
 			if(logX == '')
@@ -56,26 +51,31 @@ node {
 		
 		}
        stage ('Tests') {
-            parallel 'static': {
-                bat "echo 'shell scripts to run static tests...'"
-            },
-            'unit': {
-                bat "java -jar target\\tafd.jar"
-				def out= "$JENKINS_HOME/jobs/$JOB_NAME/builds/${BUILD_NUMBER}"
+          
+               def status = ""
+            try{
+              bat "java -jar target\\tafd.jar"
+			  def out= "$JENKINS_HOME/jobs/$JOB_NAME/builds/${BUILD_NUMBER}"
 				bat "cd $JENKINS_HOME/jobs/$JOB_NAME/builds/${BUILD_NUMBER} \n dir /b /a-d > tmp.txt"
 				def files = readFile "$JENKINS_HOME/jobs/$JOB_NAME/builds/${BUILD_NUMBER}/tmp.txt"
 				echo files
 				def temp="tmp.txt";
 				bat "java -jar LogParser.jar $out temp.txt"
-			
-            },
-            'integration': {
-                bat "echo 'shell scripts to run integration tests...'"
-            }
+				status = readFile "$JENKINS_HOME/jobs/$JOB_NAME/builds/${BUILD_NUMBER}/result.txt"
+				if(status.contains('Unsuccessful')){
+					echo status
+					throw err 
+					}
+					}
+					catch(err)
+					{
+					currentBuild.result='UNSTABLE'
+					}
+			          
         }
         stage ('Deploy') {
             //update dashboard
-            bat "echo 'shell scripts to deploy to server...'"
+            echo "Needs to update Dashboard"
         }
     } catch (err) {
         currentBuild.result = 'FAILED'
